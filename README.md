@@ -1,14 +1,14 @@
 user would insert monthly income and distribute expanses according to this list-
 
-mortgage
-utilities
-healthcare
-insurance
-groceries
-vacation
-lifestyle (fitness, grooming)
-entertainment
-shopping
+- mortgage
+- utilities
+- healthcare
+- insurance
+- groceries
+- vacation
+- lifestyle (fitness, grooming)
+- entertainment
+- shopping
 _____
 
 
