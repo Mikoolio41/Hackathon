@@ -5,7 +5,6 @@ utilities
 healthcare
 insurance
 groceries
-_____
 vacation
 lifestyle (fitness, grooming)
 entertainment
