@@ -22,13 +22,101 @@
 </header>
 <div class="jumbotron text-center mt-auto">
     <h1 class="display-4">My name is Buck!</h1>
-    <p class="lead">I was created to help YOU manage all your finance resources in one place.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">I was created to help YOU manage all your financial resources in one place.</p>
     <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Try me!</a>
     </p>
   </div>
+
+  <form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
+
+    <p>
+    <label>Name
+    <input type="text" name="customer_name" required>
+    </label> 
+    </p>
+    
+    <p>
+    <label>Email 
+    <input type="email" name="email_address">
+    </label>
+    </p>
+    
+    <!-- <fieldset>
+    <legend>Please enter your monthly income</legend>
+    <p><label class="choice"> <input type="radio" name="taxi" required value="car"> Car </label></p>
+    <p><label class="choice"> <input type="radio" name="taxi" required value="van"> Van </label></p>
+    <p><label class="choice"> <input type="radio" name="taxi" required value="tuktuk"> Tuk Tuk </label></p>
+    </fieldset> -->
+
+    <fieldset>
+    <legend>Please enter your monthly income</legend>
+    <p><label class="choice"> <input type="radio" name="1" required value="1"> 1 </label></p>
+    <p><label class="choice"> <input type="radio" name="2" required value="2"> 2 </label></p>
+    <p><label class="choice"> <input type="radio" name="3" required value="3"> 3 </label></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Distribution of Expanses</legend>
+    </fieldset>
+    <p>
+        <label>Name
+        <input type="text" name="customer_name" required>
+        </label> 
+        </p>
+        
+    <p>
+        <label>Name
+        <input type="text" name="customer_name" required>
+        </label> 
+        </p>
+    
+    <!-- <fieldset>
+    <legend>Extras</legend>
+    <p><label class="choice"> <input type="checkbox" name="extras" value="baby"> Baby Seat </label></p>
+    <p><label class="choice"> <input type="checkbox" name="extras" value="wheelchair"> Wheelchair Access </label></p>
+    <p><label class="choice"> <input type="checkbox" name="extras" value="tip"> Stock Tip </label></p>
+    </fieldset> -->
+    
+    <!-- <p>
+    <label>Pickup Date/Time
+    <input type="datetime-local" name="pickup_time" required>
+    </label>
+    </p> -->
+        
+    <!-- <p>
+    <label>Pickup Place
+    <select id="pickup_place" name="pickup_place">
+    <option value="" selected="selected">Select One</option>
+    <option value="office">Taxi Office</option>
+    <option value="town_hall">Town Hall</option>
+    <option value="telepathy">We'll Guess!</option>
+    </select>
+    </label> 
+    </p>
+     -->
+    <!-- <p>
+    <label>Dropoff Place
+    <input type="text" name="dropoff_place" required list="destinations">
+    </label>
+    
+    <datalist id="destinations">
+    <option value="Airport">
+    <option value="Beach">
+    <option value="Fred Flinstone's House">
+    </datalist>
+    </p>
+    
+    <p>
+    <label>Special Instructions
+    <textarea name="comments" maxlength="500"></textarea>
+    </label>
+    </p> -->
+    
+    <p><button>Submit Booking</button></p>
+    
+    </form>
+    
 
     <script src="./script.js"></script>
 </body>
