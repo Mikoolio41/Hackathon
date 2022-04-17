@@ -4,7 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: rgb(210, 225, 230);
+    background-color: rgb(226, 234, 236);
 }
 
 
@@ -13,6 +13,13 @@
     height: 35px;
     cursor: pointer;
     margin-right: auto;
+}
+
+.buckLogo {
+    width: 505px;
+    height: 300px;
+    margin-top: auto;
+    padding-bottom: 30px;
 }
 
 li, a , button {
@@ -64,7 +71,7 @@ button:hover {
 }
 
 .jumbotron {
-    padding-top: 80px;
+    padding-top: 40px;
     padding-bottom: 50px;
 }
 
@@ -129,7 +136,7 @@ button:hover {
 .myForm button {
     padding: 1em;
     border-radius: 0.5em;
-    background: #eee;
+    background: rgb(172, 189, 205);
     border: none;
     font-weight: bold;
     margin-top: 1em;

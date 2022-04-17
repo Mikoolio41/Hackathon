@@ -21,6 +21,7 @@
     <a class="contact" href="#"><button>Contact</button></a>
 </header>
 <div class="jumbotron text-center mt-auto">
+    <img class="buckLogo" src="./pics/logoBuck2.png" alt="logo">
     <h1 class="display-4">My name is Buck!</h1>
     <p class="lead">I was created to help YOU manage all your financial resources in one place.</p>
     <p class="lead">
@@ -29,47 +30,82 @@
   </div>
 
   <form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
-
+    <fieldset>
+    <legend>Personal Details</legend>
+    <p>Please enter your name and email:</p>
     <p>
     <label>Name
     <input type="text" name="customer_name" required>
     </label> 
     </p>
+    </fieldset>
     
     <p>
     <label>Email 
     <input type="email" name="email_address">
     </label>
     </p>
-    
-    <!-- <fieldset>
-    <legend>Please enter your monthly income</legend>
-    <p><label class="choice"> <input type="radio" name="taxi" required value="car"> Car </label></p>
-    <p><label class="choice"> <input type="radio" name="taxi" required value="van"> Van </label></p>
-    <p><label class="choice"> <input type="radio" name="taxi" required value="tuktuk"> Tuk Tuk </label></p>
-    </fieldset> -->
 
     <fieldset>
-    <legend>Please enter your monthly income</legend>
-    <p><label class="choice"> <input type="radio" name="1" required value="1"> 1 </label></p>
-    <p><label class="choice"> <input type="radio" name="2" required value="2"> 2 </label></p>
-    <p><label class="choice"> <input type="radio" name="3" required value="3"> 3 </label></p>
+    <legend>Income</legend>
+    <p>Please enter your monthly income</p>
+    <p><label class="choice"> <input type="radio" name="10under" required value="1"> 10k or under </label></p>
+    <p><label class="choice"> <input type="radio" name="to25" required value="2"> 11k to 25k </label></p>
+    <p><label class="choice"> <input type="radio" name="26above" required value="3"> 26k or above </label></p>
     </fieldset>
 
     <fieldset>
         <legend>Distribution of Expanses</legend>
+        <p>Please enter your estimated monthly budget for each of the following:</p>
     </fieldset>
     <p>
-        <label>Name
-        <input type="text" name="customer_name" required>
+        <label>Mortgage
+        <input type="text" name="mortgage">
         </label> 
         </p>
         
     <p>
-        <label>Name
-        <input type="text" name="customer_name" required>
+        <label>Utilities
+        <input type="text" name="utilities">
         </label> 
         </p>
+    <p>
+        <label>Health Care
+        <input type="text" name="health_care">
+        </label> 
+        </p>
+    <p>
+        <label>Insurance
+        <input type="text" name="insurance">
+        </label> 
+        </p>
+    <p>
+        <label>Groceries
+        <input type="text" name="groceries">
+        </label> 
+        </p>
+    <p>
+        <label>Vacation
+        <input type="text" name="vacation">
+        </label> 
+        </p>
+    <p>
+        <label>Lifestyle (fitness, grooming)
+        <input type="text" name="lifestyle">
+        </label> 
+        </p>
+    <p>
+        <label>Entertainment
+        <input type="text" name="entertainment">
+        </label> 
+        </p>
+    <p>
+        <label>Shopping
+        <input type="text" name="shopping">
+        </label> 
+        </p>
+
+
     
     <!-- <fieldset>
     <legend>Extras</legend>
@@ -78,12 +114,6 @@
     <p><label class="choice"> <input type="checkbox" name="extras" value="tip"> Stock Tip </label></p>
     </fieldset> -->
     
-    <!-- <p>
-    <label>Pickup Date/Time
-    <input type="datetime-local" name="pickup_time" required>
-    </label>
-    </p> -->
-        
     <!-- <p>
     <label>Pickup Place
     <select id="pickup_place" name="pickup_place">
@@ -113,7 +143,7 @@
     </label>
     </p> -->
     
-    <p><button>Submit Booking</button></p>
+    <p><button>Submit</button></p>
     
     </form>
     
