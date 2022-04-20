@@ -36,160 +36,239 @@
         <a class="btn btn-primary btn-lg" href="#" role="button">Try me!</a>
       </p>
     </div>
+<div class="formTableContainer">
+      <form
+        class="myForm"
+        method="get"
+        enctype="application/x-www-form-urlencoded"
+        action="/html/codes/html_form_handler.cfm"
+      >
+        <fieldset>
+          <legend>Personal Details</legend>
+          <p>Please enter your name and email:</p>
+          <p>
+            <label
+              >Name
+              <input type="text" id="fullName" name="customer_name" required />
+            </label>
+          </p>
+        </fieldset>
 
-    <form
-      class="myForm"
-      method="get"
-      enctype="application/x-www-form-urlencoded"
-      action="/html/codes/html_form_handler.cfm"
-    >
-      <fieldset>
-        <legend>Personal Details</legend>
-        <p>Please enter your name and email:</p>
         <p>
           <label
-            >Name
-            <input type="text" id="fullName" name="customer_name" required />
+            >Email
+            <input type="email" name="email_address" />
           </label>
         </p>
-      </fieldset>
 
-      <p>
-        <label
-          >Email
-          <input type="email" name="email_address" />
-        </label>
-      </p>
+        <fieldset>
+          <legend>Income</legend>
+          <p>Please enter your monthly income</p>
+          <p>
+            <label
+              >Income
+              <input type="text" id="income" name="customer_income" required />
+            </label>
+          </p>
+          <!-- <p>
+            <label class="choice">
+              <input type="radio" name="10under" required value="1" /> 10k or
+              under
+            </label>
+          </p>
+          <p>
+            <label class="choice">
+              <input type="radio" name="to25" required value="2" /> 11k to 25k
+            </label>
+          </p>
+          <p>
+            <label class="choice">
+              <input type="radio" name="26above" required value="3" /> 26k or
+              above
+            </label>
+          </p> -->
+        </fieldset>
 
-      <fieldset>
-        <legend>Income</legend>
-        <p>Please enter your monthly income</p>
+        <fieldset>
+          <legend>Distribution of Expenses</legend>
+          <p>
+            Please enter your estimated monthly budget for each of the following:
+          </p>
+        </fieldset>
         <p>
           <label
-            >Income
-            <input type="text" id="income" name="customer_income" required />
+            >Mortgage
+            <input type="text" name="mortgage" />
           </label>
         </p>
+        <p>
+          <label
+            >Utilities
+            <input type="text" name="utilities" />
+          </label>
+        </p>
+        <p>
+          <label
+            >Health Care
+            <input type="text" name="health_care" />
+          </label>
+        </p>
+        <p>
+          <label
+            >Insurance
+            <input type="text" name="insurance" />
+          </label>
+        </p>
+        <p>
+          <label
+            >Groceries
+            <input type="text" name="groceries" />
+          </label>
+        </p>
+        <p>
+          <label
+            >Vacation
+            <input type="text" name="vacation" />
+          </label>
+        </p>
+        <p>
+          <label
+            >Lifestyle (fitness, grooming)
+            <input type="text" name="lifestyle" />
+          </label>
+        </p>
+        <p>
+          <label
+            >Entertainment
+            <input type="text" name="entertainment" />
+          </label>
+        </p>
+        <p>
+          <label
+            >Shopping
+            <input type="text" name="shopping" />
+          </label>
+        </p>
+
+        <!-- <fieldset>
+      <legend>Extras</legend>
+      <p><label class="choice"> <input type="checkbox" name="extras" value="baby"> Baby Seat </label></p>
+      <p><label class="choice"> <input type="checkbox" name="extras" value="wheelchair"> Wheelchair Access </label></p>
+      <p><label class="choice"> <input type="checkbox" name="extras" value="tip"> Stock Tip </label></p>
+      </fieldset> -->
+
         <!-- <p>
-          <label class="choice">
-            <input type="radio" name="10under" required value="1" /> 10k or
-            under
-          </label>
-        </p>
-        <p>
-          <label class="choice">
-            <input type="radio" name="to25" required value="2" /> 11k to 25k
-          </label>
-        </p>
-        <p>
-          <label class="choice">
-            <input type="radio" name="26above" required value="3" /> 26k or
-            above
-          </label>
-        </p> -->
-      </fieldset>
+      <label>Pickup Place
+      <select id="pickup_place" name="pickup_place">
+      <option value="" selected="selected">Select One</option>
+      <option value="office">Taxi Office</option>
+      <option value="town_hall">Town Hall</option>
+      <option value="telepathy">We'll Guess!</option>
+      </select>
+      </label> 
+      </p>
+      -->
+        <!-- <p>
+      <label>Dropoff Place
+      <input type="text" name="dropoff_place" required list="destinations">
+      </label>
+      
+      <datalist id="destinations">
+      <option value="Airport">
+      <option value="Beach">
+      <option value="Fred Flinstone's House">
+      </datalist>
+      </p>
+      
+      <p>
+      <label>Special Instructions
+      <textarea name="comments" maxlength="500"></textarea>
+      </label>
+      </p> -->
 
-      <fieldset>
-        <legend>Distribution of Expenses</legend>
-        <p>
-          Please enter your estimated monthly budget for each of the following:
-        </p>
-      </fieldset>
+        <p><button>Submit</button></p>
+      </form>
+  <div class="tableContainer">
+    <fieldset class="tableHeader">
+      <legend>Monthly estimation of Expenses</legend>
       <p>
-        <label
-          >Mortgage
-          <input type="text" name="mortgage" />
-        </label>
+        You may add/remove months to fit your plan
       </p>
+    </fieldset>
+      <table class="greenTable">
+        <thead>
+        <tr>
+          <th></th>
+          <th>Planned Expenses</th>
+          <th>Month 1</th>
+          <th>Month 2</th>
+          <th>Month 3</th>
+          <th>Total Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>2022</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        <tr>
+          <th>2021</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2020</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        </tbody>
+        </tr>
+        </table>
 
-      <p>
-        <label
-          >Utilities
-          <input type="text" name="utilities" />
-        </label>
-      </p>
-      <p>
-        <label
-          >Health Care
-          <input type="text" name="health_care" />
-        </label>
-      </p>
-      <p>
-        <label
-          >Insurance
-          <input type="text" name="insurance" />
-        </label>
-      </p>
-      <p>
-        <label
-          >Groceries
-          <input type="text" name="groceries" />
-        </label>
-      </p>
-      <p>
-        <label
-          >Vacation
-          <input type="text" name="vacation" />
-        </label>
-      </p>
-      <p>
-        <label
-          >Lifestyle (fitness, grooming)
-          <input type="text" name="lifestyle" />
-        </label>
-      </p>
-      <p>
-        <label
-          >Entertainment
-          <input type="text" name="entertainment" />
-        </label>
-      </p>
-      <p>
-        <label
-          >Shopping
-          <input type="text" name="shopping" />
-        </label>
-      </p>
 
-      <!-- <fieldset>
-    <legend>Extras</legend>
-    <p><label class="choice"> <input type="checkbox" name="extras" value="baby"> Baby Seat </label></p>
-    <p><label class="choice"> <input type="checkbox" name="extras" value="wheelchair"> Wheelchair Access </label></p>
-    <p><label class="choice"> <input type="checkbox" name="extras" value="tip"> Stock Tip </label></p>
-    </fieldset> -->
 
-      <!-- <p>
-    <label>Pickup Place
-    <select id="pickup_place" name="pickup_place">
-    <option value="" selected="selected">Select One</option>
-    <option value="office">Taxi Office</option>
-    <option value="town_hall">Town Hall</option>
-    <option value="telepathy">We'll Guess!</option>
-    </select>
-    </label> 
-    </p>
-     -->
-      <!-- <p>
-    <label>Dropoff Place
-    <input type="text" name="dropoff_place" required list="destinations">
-    </label>
-    
-    <datalist id="destinations">
-    <option value="Airport">
-    <option value="Beach">
-    <option value="Fred Flinstone's House">
-    </datalist>
-    </p>
-    
-    <p>
-    <label>Special Instructions
-    <textarea name="comments" maxlength="500"></textarea>
-    </label>
-    </p> -->
 
-      <p><button>Submit</button></p>
-    </form>
-
+      <!-- <thead>
+        <tr>
+          <th></th>
+          <th>Planned Expenses</th>
+          <th>Month 1</th>
+          <th>Month 2</th>
+          <th>Month 3</th>
+          <th>Total Year</th>
+        </tr>
+      </thead>
+      <tbody class="tableBody">
+        <tr>
+          <th>2022</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2021</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
+  </div>
+</div> -->
     <script src="./script.js"></script>
   </body>
 </html>

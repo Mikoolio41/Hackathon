@@ -4,9 +4,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: rgb(226, 234, 236);
+    /* background-color: rgb(226, 234, 236); */
 }
 
+.formTableContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .logo {
     width: 100px;
@@ -93,7 +97,6 @@ button:hover {
     width: 40em;
     padding: 20px 50px;
     border: 1px solid #ccc;
-    
 }
     
 .myForm * {
@@ -146,3 +149,68 @@ button:hover {
     background: #ccc;
     cursor: pointer;
 }
+
+.tableHeader legend {
+    margin-left:auto;
+    margin-right:auto;
+    width: 600px;
+    font-weight: bold;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.tableHeader, legend p{
+    padding: 0;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+table.greenTable {
+    border: 1px solid #11814F;
+    background-color: #F1F1F1;
+    width: 600px;
+    height: 200px;
+    text-align: left;
+    border-collapse: collapse;
+   
+  }
+  table.greenTable td, table.greenTable th {
+    border: 1px solid #AAAAAA;
+    padding: 4px 4px;
+  }
+  table.greenTable tbody td {
+    font-size: 13px;
+    color: #000000;
+  }
+  table.greenTable tr:nth-child(even) {
+    background: #93dfc2;
+  }
+  table.greenTable thead {
+    background: #11814F;
+    background: -moz-linear-gradient(top, #4ca07b 0%, #288d60 66%, #11814F 100%);
+    background: -webkit-linear-gradient(top, #4ca07b 0%, #288d60 66%, #11814F 100%);
+    background: linear-gradient(to bottom, #4ca07b 0%, #288d60 66%, #11814F 100%);
+    border-bottom: 2px solid #444444;
+  }
+  table.greenTable thead th {
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #6F8D79;
+  }
+  table.greenTable thead th:first-child {
+    border-left: none;
+  }
+  
+  table.greenTable tfoot td {
+    font-size: 14px;
+  }
+  table.greenTable tfoot .links {
+    text-align: right;
+  }
+  table.greenTable tfoot .links a{
+    display: inline-block;
+    background: #1C6EA4;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
