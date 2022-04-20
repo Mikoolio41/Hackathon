@@ -11,9 +11,14 @@ user would insert monthly income and distribute expanses according to this list-
 - shopping
 _____
 
-
 i'm headed to nyc, i'll finish it tomorrow i believe :)
 
 **feel free to add/change/remove whatever you want!**
 
 BYE :)
+_____
+
+
+20/4 - 
+
+added a table
