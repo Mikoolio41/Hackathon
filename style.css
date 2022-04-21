@@ -4,14 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* background-color: rgb(226, 234, 236); */
 }
-
-.formTableContainer {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .logo {
   width: 100px;
   height: 35px;
@@ -92,16 +85,22 @@ button:hover {
   background-color: rgba(48, 137, 113, 0.8);
 }
 
-.myForm {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-size: 0.8em;
-  width: 40em;
-  padding: 20px 50px;
-  border: 1px solid #ccc;
+.formTableContainer {
+  display: flex;
+  justify-content: space-around;
 }
 
-.myForm * {
+.formContainer {
+  justify-content: flex-start;
+}
+
+.myForm {
   box-sizing: border-box;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 0.8em;
+  width: 30em;
+  padding: 20px 30px;
+  border: 1px solid #ccc;
 }
 
 .myForm fieldset {
@@ -133,6 +132,10 @@ button:hover {
   padding: 0.3em;
 }
 
+.myForm select {
+  width: 121%;
+}
+
 .myForm textarea {
   height: 100px;
 }
@@ -143,18 +146,22 @@ button:hover {
   background: rgb(172, 189, 205);
   border: none;
   font-weight: bold;
-  margin-top: 1em;
+  margin: auto;
+  margin-left: 33%;
 }
 
 .myForm button:hover {
   background: #ccc;
   cursor: pointer;
 }
+.tableContainer {
+  justify-content: flex-end;
+}
 
 .tableHeader legend {
   margin-left: auto;
   margin-right: auto;
-  width: 600px;
+  width: 400px;
   font-weight: bold;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
@@ -168,7 +175,7 @@ legend p {
 table.greenTable {
   border: 1px solid #11814f;
   background-color: #f1f1f1;
-  width: 600px;
+  width: 400px;
   height: 200px;
   text-align: left;
   border-collapse: collapse;
