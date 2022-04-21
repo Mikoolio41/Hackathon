@@ -1,216 +1,223 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    /* background-color: rgb(226, 234, 236); */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* background-color: rgb(226, 234, 236); */
 }
 
 .formTableContainer {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .logo {
-    width: 100px;
-    height: 35px;
-    cursor: pointer;
-    margin-right: auto;
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  margin-right: auto;
 }
 
 .buckLogo {
-    width: 505px;
-    height: 300px;
-    margin-top: auto;
-    padding-bottom: 30px;
+  width: 505px;
+  height: 300px;
+  margin-top: auto;
+  padding-bottom: 30px;
 }
 
-li, a , button {
-    font-family: 'Lora', serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: black;
-    text-decoration: none;
+li,
+a,
+button {
+  font-family: "Lora", serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
 }
 
 header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 15px 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 10%;
 }
 
 .navLinks {
-    list-style: none;
-    margin: auto;
+  list-style: none;
+  margin: auto;
 }
 
 .navLinks li {
-    display: inline-block;
-    padding: 0px 20px;
+  display: inline-block;
+  padding: 0px 20px;
 }
 
 .navLinks li a {
-    transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .navLinks li a:hover {
-    color: grey;
+  color: grey;
 }
 
 button {
-    padding: 9px 25px;
-    background-color: #308971;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    margin-left: 20px;
-
+  padding: 9px 25px;
+  background-color: #308971;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  margin-left: 20px;
 }
 
 button:hover {
-    background-color: rgba(48, 137, 113, 0.8);
+  background-color: rgba(48, 137, 113, 0.8);
 }
 
 .jumbotron {
-    padding-top: 40px;
-    padding-bottom: 50px;
+  padding-top: 40px;
+  padding-bottom: 50px;
 }
 
 .btn {
-    background-color: #308971;
-    border:rgba(37, 86, 73, 0.8);
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    border-radius: 50px;
+  background-color: #308971;
+  border: rgba(37, 86, 73, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  border-radius: 50px;
 }
 
 .btn:hover {
-    background-color: rgba(48, 137, 113, 0.8);
+  background-color: rgba(48, 137, 113, 0.8);
 }
 
 .myForm {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 0.8em;
-    width: 40em;
-    padding: 20px 50px;
-    border: 1px solid #ccc;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 0.8em;
+  width: 40em;
+  padding: 20px 50px;
+  border: 1px solid #ccc;
 }
-    
+
 .myForm * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-    
+
 .myForm fieldset {
-    border: none;
-    padding: 0;
+  border: none;
+  padding: 0;
 }
-    
+
 .myForm legend,
 .myForm label {
-    padding: 0;
-    font-weight: bold;
+  padding: 0;
+  font-weight: bold;
 }
-    
+
 .myForm label.choice {
-    font-size: 0.9em;
-    font-weight: normal;
+  font-size: 0.9em;
+  font-weight: normal;
 }
-    
+
 .myForm input[type="text"],
 .myForm input[type="email"],
 .myForm input[type="datetime-local"],
 .myForm select,
 .myForm textarea {
-    display: block;
-    width: 100%;
-    border: 1px solid #ccc;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 0.9em;
-    padding: 0.3em;
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 0.9em;
+  padding: 0.3em;
 }
-    
+
 .myForm textarea {
-    height: 100px;
+  height: 100px;
 }
-    
+
 .myForm button {
-    padding: 1em;
-    border-radius: 0.5em;
-    background: rgb(172, 189, 205);
-    border: none;
-    font-weight: bold;
-    margin-top: 1em;
+  padding: 1em;
+  border-radius: 0.5em;
+  background: rgb(172, 189, 205);
+  border: none;
+  font-weight: bold;
+  margin-top: 1em;
 }
-    
+
 .myForm button:hover {
-    background: #ccc;
-    cursor: pointer;
+  background: #ccc;
+  cursor: pointer;
 }
 
 .tableHeader legend {
-    margin-left:auto;
-    margin-right:auto;
-    width: 600px;
-    font-weight: bold;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  font-weight: bold;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-.tableHeader, legend p{
-    padding: 0;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+.tableHeader,
+legend p {
+  padding: 0;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 table.greenTable {
-    border: 1px solid #11814F;
-    background-color: #F1F1F1;
-    width: 600px;
-    height: 200px;
-    text-align: left;
-    border-collapse: collapse;
-   
-  }
-  table.greenTable td, table.greenTable th {
-    border: 1px solid #AAAAAA;
-    padding: 4px 4px;
-  }
-  table.greenTable tbody td {
-    font-size: 13px;
-    color: #000000;
-  }
-  table.greenTable tr:nth-child(even) {
-    background: #93dfc2;
-  }
-  table.greenTable thead {
-    background: #11814F;
-    background: -moz-linear-gradient(top, #4ca07b 0%, #288d60 66%, #11814F 100%);
-    background: -webkit-linear-gradient(top, #4ca07b 0%, #288d60 66%, #11814F 100%);
-    background: linear-gradient(to bottom, #4ca07b 0%, #288d60 66%, #11814F 100%);
-    border-bottom: 2px solid #444444;
-  }
-  table.greenTable thead th {
-    font-size: 17px;
-    font-weight: bold;
-    color: #FFFFFF;
-    text-align: center;
-    border-left: 2px solid #6F8D79;
-  }
-  table.greenTable thead th:first-child {
-    border-left: none;
-  }
-  
-  table.greenTable tfoot td {
-    font-size: 14px;
-  }
-  table.greenTable tfoot .links {
-    text-align: right;
-  }
-  table.greenTable tfoot .links a{
-    display: inline-block;
-    background: #1C6EA4;
-    color: #FFFFFF;
-    padding: 2px 8px;
-    border-radius: 5px;
-  }
+  border: 1px solid #11814f;
+  background-color: #f1f1f1;
+  width: 600px;
+  height: 200px;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.greenTable td,
+table.greenTable th {
+  border: 1px solid #aaaaaa;
+  padding: 4px 4px;
+}
+table.greenTable tbody td {
+  font-size: 13px;
+  color: #000000;
+}
+table.greenTable tr:nth-child(even) {
+  background: #93dfc2;
+}
+table.greenTable thead {
+  background: #11814f;
+  background: -moz-linear-gradient(top, #4ca07b 0%, #288d60 66%, #11814f 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #4ca07b 0%,
+    #288d60 66%,
+    #11814f 100%
+  );
+  background: linear-gradient(to bottom, #4ca07b 0%, #288d60 66%, #11814f 100%);
+  border-bottom: 2px solid #444444;
+}
+table.greenTable thead th {
+  font-size: 17px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  border-left: 2px solid #6f8d79;
+}
+table.greenTable thead th:first-child {
+  border-left: none;
+}
+
+table.greenTable tfoot td {
+  font-size: 14px;
+}
+table.greenTable tfoot .links {
+  text-align: right;
+}
+table.greenTable tfoot .links a {
+  display: inline-block;
+  background: #1c6ea4;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
