@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap");
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -91,16 +90,30 @@ button:hover {
 }
 
 .formContainer {
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 20em 20em;
+  grid-template-rows: repeat(10, 4em);
+  border: 1px solid rgb(217, 217, 217);
+  width: 40em;
 }
 
 .myForm {
-  box-sizing: border-box;
+  display: grid;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 0.8em;
-  width: 30em;
   padding: 20px 30px;
-  border: 1px solid #ccc;
+  
+}
+.rightGrid {
+  grid-column: 1 / 2;
+}
+
+.leftGrid {
+  grid-column: 0 / 1;
+}
+
+.personalDetails {
+  grid-row: 0 / 1;
 }
 
 .myForm fieldset {
@@ -121,23 +134,18 @@ button:hover {
 
 .myForm input[type="text"],
 .myForm input[type="email"],
-.myForm input[type="datetime-local"],
-.myForm select,
-.myForm textarea {
-  display: block;
+.myForm select {
   width: 100%;
   border: 1px solid #ccc;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 0.9em;
   padding: 0.3em;
+  
+
 }
 
 .myForm select {
   width: 121%;
-}
-
-.myForm textarea {
-  height: 100px;
 }
 
 .myForm button {
@@ -153,9 +161,6 @@ button:hover {
 .myForm button:hover {
   background: #ccc;
   cursor: pointer;
-}
-.tableContainer {
-  justify-content: flex-end;
 }
 
 .tableHeader legend {
