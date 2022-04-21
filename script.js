@@ -1,7 +1,7 @@
 //Define Global Variables for easier use
 
 const fullName = document.getElementById("fullName").value;
-const income = document.getElementById("income").value;
+// const income = document.getElementById("income").value;
 
 let categoryColor = {
   category: [
@@ -123,3 +123,78 @@ const expenseChart = new Chart(ctx, {
     },
   },
 });
+
+// document
+//   .querySelector(`input[name="submit"]`)
+//   .addEventListener("submit", getData);
+
+document
+  .querySelector(`button[name="submit"]`)
+  .addEventListener("click", getData);
+
+function sayhi() {
+  console.log(document.querySelector(`input[name="month"]`).value);
+}
+
+let sampleMonth3 = {};
+class MonthExpense {
+  constructor(
+    name,
+    year,
+    currency,
+    income,
+    mortgage,
+    utilities,
+    healthcare,
+    insurance,
+    groceries,
+    vacation,
+    lifestyle,
+    entertainment,
+    shopping
+  ) {
+    this.name = name;
+    this.year = year;
+    this.currency = currency;
+    this.income = income;
+    this.mortgage = mortgage;
+    this.utilities = utilities;
+    this.healthcare = healthcare;
+    this.insurance = insurance;
+    this.groceries = groceries;
+    this.vacation = vacation;
+    this.lifestyle = lifestyle;
+    this.entertainment = entertainment;
+    this.shopping = shopping;
+  }
+}
+function getData(e) {
+  e.preventDefault();
+  // let a = document.getElementById("month").value;
+
+  let newMonth = new MonthExpense(
+    document.querySelector(`input[name="month"]`).value,
+    document.querySelector(`input[name="year"]`).value,
+    document.querySelector(`input[name="currency"]`).value,
+    document.querySelector(`input[name="income"]`).value,
+    document.querySelector(`input[name="mortgage"]`).value,
+    document.querySelector(`input[name="utilities"]`).value,
+    document.querySelector(`input[name="healthcare"]`).value,
+    document.querySelector(`input[name="insurance"]`).value,
+    document.querySelector(`input[name="groceries"]`).value,
+    document.querySelector(`input[name="vacation"]`).value,
+    document.querySelector(`input[name="lifestyle"]`).value,
+    document.querySelector(`input[name="entertainment"]`).value,
+    document.querySelector(`input[name="shopping"]`).value
+  );
+  // console.log(a);
+  console.log(document.querySelector(`input[name="month"]`).value);
+  console.log(newMonth);
+  sampleMonth3 = newMonth.map;
+  console.log(sampleMonth3);
+  // return newMonth;
+}
+
+// let sampleMonth3 = getData();
+
+// console.log(sampleMonth3);

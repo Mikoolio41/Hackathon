@@ -37,12 +37,7 @@
       </p>
     </div>
     <div class="formTableContainer">
-      <form
-        class="myForm"
-        method="get"
-        enctype="application/x-www-form-urlencoded"
-        action="/html/codes/html_form_handler.cfm"
-      >
+      <form class="myForm" method="get">
         <fieldset>
           <legend>Personal Details</legend>
           <p>Please enter your name and email:</p>
@@ -65,7 +60,7 @@
           <p>
             <label
               >Income
-              <input type="text" id="income" name="customer_income" required />
+              <input type="text" name="customer_income" required />
             </label>
           </p>
         </fieldset>
@@ -78,59 +73,86 @@
         </fieldset>
         <p>
           <label
+            >Month
+            <input type="text" ,id="month" , name="month" />
+          </label>
+        </p>
+        <p>
+          <label
+            >Year
+            <input type="text" ,id="year" , name="year" />
+          </label>
+        </p>
+        <p>
+          <label
+            >Currency
+            <input type="text" ,id="currency" , name="currency" />
+          </label>
+        </p>
+        <p>
+          <label
+            >Income
+            <input type="text" ,id="income" , name="income" />
+          </label>
+        </p>
+        <p>
+          <label
             >Mortgage
-            <input type="text" name="mortgage" />
+            <input type="text" ,id="mortgage" , name="mortgage" />
           </label>
         </p>
         <p>
           <label
             >Utilities
-            <input type="text" name="utilities" />
+            <input type="text" ,id="utilities" , name="utilities" />
           </label>
         </p>
         <p>
           <label
             >Health Care
-            <input type="text" name="health_care" />
+            <input type="text" ,id="healthcare" , name="healthcare" />
           </label>
         </p>
         <p>
           <label
             >Insurance
-            <input type="text" name="insurance" />
+            <input type="text" ,id="insurance" , name="insurance" />
           </label>
         </p>
         <p>
           <label
             >Groceries
-            <input type="text" name="groceries" />
+            <input type="text" ,id="groceries" , name="groceries" />
           </label>
         </p>
         <p>
           <label
             >Vacation
-            <input type="text" name="vacation" />
+            <input type="text" ,id="vacation" , name="vacation" />
           </label>
         </p>
         <p>
           <label
             >Lifestyle (fitness, grooming)
-            <input type="text" name="lifestyle" />
+            <input type="text" ,id="lifestyle" , name="lifestyle" />
           </label>
         </p>
         <p>
           <label
             >Entertainment
-            <input type="text" name="entertainment" />
+            <input type="text" ,id="entertainment" , name="entertainment" />
           </label>
         </p>
         <p>
           <label
             >Shopping
-            <input type="text" name="shopping" />
+            <input type="text" ,id="shopping" , name="shopping" />
           </label>
         </p>
-        <p><button>Submit</button></p>
+        <p>
+          <button name="submit">Submit</button>
+          <!-- <input type="submit" name="submit" value="Submit" /> -->
+        </p>
       </form>
     </div>
     <div class="tableContainer">
@@ -313,6 +335,12 @@
     <div>
       <canvas id="chart"></canvas>
     </div>
+    <!-- <form
+      class="myForm"
+      method="get"
+      enctype="application/x-www-form-urlencoded"
+      action="/html/codes/html_form_handler.cfm"
+    ></form> -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
       integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
