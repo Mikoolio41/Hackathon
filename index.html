@@ -37,310 +37,224 @@
       </p>
     </div>
     <div class="formTableContainer">
-      <form class="myForm" method="get">
-        <fieldset>
-          <legend>Personal Details</legend>
-          <p>Please enter your name and email:</p>
-          <p>
+      <div class="formContainer">
+        <form class="myForm" method="get">
+          <fieldset class="leftGrid personalDetails">
+            <legend>Personal Details</legend>
+            <p class="leftGrid personalDetails">Please enter your name and email:</p>
+            <p class="leftGrid namePerson">
+              <label
+                >Name
+                <input
+                  type="text"
+                  id="fullName"
+                  name="customer_name"
+                  required
+                />
+              </label>
+            </p>
+          </fieldset>
+          <p class="leftGrid emailPerson">
             <label
-              >Name
-              <input type="text" id="fullName" name="customer_name" required />
+              >Email
+              <input type="email" name="email_address" />
             </label>
           </p>
-        </fieldset>
-        <p>
-          <label
-            >Email
-            <input type="email" name="email_address" />
-          </label>
-        </p>
-        <fieldset>
-          <legend>Income</legend>
-          <p>Please enter your monthly income</p>
-          <p>
+          <fieldset class="rightGrid incomeTitle">
+            <legend>Income</legend>
+            <p>Please enter your monthly income</p>
+            <p class="rightGrid incomeInput">
+              <label
+                >Income
+                <input type="text" name="customer_income" required />
+              </label>
+            </p>
+          </fieldset>
+          <fieldset class="leftGrid distTitle">
+            <legend>Distribution of Expenses</legend>
+            <p class="leftGrid distTitle">
+              Please enter your estimated monthly budget for each of the
+              following:
+            </p>
+          </fieldset>
+          <p class="leftGrid month">
             <label
-              >Income
-              <input type="text" name="customer_income" required />
+              >Month
+              <input type="text" id="month" name="month" />
             </label>
           </p>
+          <p class="leftGrid year">
+            <label
+              >Year
+              <input type="text" id="year" name="year" />
+            </label>
+          </p>
+          <p class="leftGrid currencySelect">
+            <label
+              >Please select currency:
+              <select id="currency" name="currency">
+                <option value="" selected="selected">Select</option>
+                <option value="Dollar">Dollar</option>
+                <option value="Euro">Euro</option>
+                <option value="Shekel">NIS</option>
+              </select>
+            </label>
+          </p>
+          <p class="leftGrid mortgage">
+            <label
+              >Mortgage
+              <input type="text" id="mortgage" name="mortgage" />
+            </label>
+          </p>
+          <p class="leftGrid utilities">
+            <label
+              >Utilities
+              <input type="text" id="utilities" name="utilities" />
+            </label>
+          </p>
+          <p class="leftGrid health">
+            <label
+              >Health Care
+              <input type="text" id="healthcare" name="healthcare" />
+            </label>
+          </p>
+          <p class="rightGrid insurance">
+            <label
+              >Insurance
+              <input type="text" id="insurance" name="insurance" />
+            </label>
+          </p>
+          <p class="rightGrid groceries">
+            <label
+              >Groceries
+              <input type="text" id="groceries" name="groceries" />
+            </label>
+          </p>
+          <p class="rightGrid vacation">
+            <label
+              >Vacation
+              <input type="text" id="vacation" name="vacation" />
+            </label>
+          </p>
+          <p class="rightGrid lifestyle">
+            <label
+              >Lifestyle (fitness, grooming)
+              <input type="text" id="lifestyle" name="lifestyle" />
+            </label>
+          </p>
+          <p class="rightGrid entertainment">
+            <label
+              >Entertainment
+              <input type="text" id="entertainment" name="entertainment" />
+            </label>
+          </p>
+          <p class="rightGrid shopping">
+            <label
+              >Shopping
+              <input type="text" id="shopping" name="shopping" />
+            </label>
+          </p>
+          <p>
+            <button name="submit">Submit</button>
+          </p>
+        </form>
+      </div>
+      <div class="tableContainer">
+        <fieldset class="tableHeader">
+          <legend>Monthly estimation of Expenses</legend>
+          <p>You may add/remove months to fit your plan</p>
         </fieldset>
-        <fieldset>
-          <legend>Distribution of Expenses</legend>
-          <p>
-            Please enter your estimated monthly budget for each of the
-            following:
-          </p>
-        </fieldset>
-        <p>
-          <label
-            >Month
-            <input type="text" ,id="month" , name="month" />
-          </label>
-        </p>
-        <p>
-          <label
-            >Year
-            <input type="text" ,id="year" , name="year" />
-          </label>
-        </p>
-        <p>
-          <label
-            >Currency
-            <input type="text" ,id="currency" , name="currency" />
-          </label>
-        </p>
-        <p>
-          <label
-            >Income
-            <input type="text" ,id="income" , name="income" />
-          </label>
-        </p>
-        <p>
-          <label
-            >Mortgage
-            <input type="text" ,id="mortgage" , name="mortgage" />
-          </label>
-        </p>
-        <p>
-          <label
-            >Utilities
-            <input type="text" ,id="utilities" , name="utilities" />
-          </label>
-        </p>
-        <p>
-          <label
-            >Health Care
-            <input type="text" ,id="healthcare" , name="healthcare" />
-          </label>
-        </p>
-        <p>
-          <label
-            >Insurance
-            <input type="text" ,id="insurance" , name="insurance" />
-          </label>
-        </p>
-        <p>
-          <label
-            >Groceries
-            <input type="text" ,id="groceries" , name="groceries" />
-          </label>
-        </p>
-        <p>
-          <label
-            >Vacation
-            <input type="text" ,id="vacation" , name="vacation" />
-          </label>
-        </p>
-        <p>
-          <label
-            >Lifestyle (fitness, grooming)
-            <input type="text" ,id="lifestyle" , name="lifestyle" />
-          </label>
-        </p>
-        <p>
-          <label
-            >Entertainment
-            <input type="text" ,id="entertainment" , name="entertainment" />
-          </label>
-        </p>
-        <p>
-          <label
-            >Shopping
-            <input type="text" ,id="shopping" , name="shopping" />
-          </label>
-        </p>
-        <p>
-          <button name="submit">Submit</button>
-          <!-- <input type="submit" name="submit" value="Submit" /> -->
-        </p>
-      </form>
+        <table class="greenTable">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Planned Expenses</th>
+              <th>Month 1</th>
+              <th>Month 2</th>
+              <th>Month 3</th>
+              <th>Total Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Mortgage</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Utilities</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Health Care</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Insurance</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Groceries</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Vacation</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Lifestyle</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Entertainment</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Shopping</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <div class="tableContainer">
-      <fieldset class="tableHeader">
-        <legend>Monthly estimation of Expenses</legend>
-        <p>You may add/remove months to fit your plan</p>
-      </fieldset>
-      <table class="greenTable">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Planned Expenses</th>
-            <th>Month 1</th>
-            <th>Month 2</th>
-            <th>Month 3</th>
-            <th>Total Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Mortgage</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Utilities</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Health Care</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Insurance</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Groceries</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Vacation</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Lifestyle</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Entertainment</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Shopping</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <!-- <p>
-            <label class="choice">
-              <input type="radio" name="10under" required value="1" /> 10k or
-              under
-            </label>
-          </p>
-          <p>
-            <label class="choice">
-              <input type="radio" name="to25" required value="2" /> 11k to 25k
-            </label>
-          </p>
-          <p>
-            <label class="choice">
-              <input type="radio" name="26above" required value="3" /> 26k or
-              above
-            </label>
-          </p> -->
-
-    <!-- <fieldset>
-      <legend>Extras</legend>
-      <p><label class="choice"> <input type="checkbox" name="extras" value="baby"> Baby Seat </label></p>
-      <p><label class="choice"> <input type="checkbox" name="extras" value="wheelchair"> Wheelchair Access </label></p>
-      <p><label class="choice"> <input type="checkbox" name="extras" value="tip"> Stock Tip </label></p>
-      </fieldset> -->
-
-    <!-- <p>
-      <label>Pickup Place
-      <select id="pickup_place" name="pickup_place">
-      <option value="" selected="selected">Select One</option>
-      <option value="office">Taxi Office</option>
-      <option value="town_hall">Town Hall</option>
-      <option value="telepathy">We'll Guess!</option>
-      </select>
-      </label> 
-      </p>
-      -->
-    <!-- <p>
-      <label>Dropoff Place
-      <input type="text" name="dropoff_place" required list="destinations">
-      </label>
-      
-      <datalist id="destinations">
-      <option value="Airport">
-      <option value="Beach">
-      <option value="Fred Flinstone's House">
-      </datalist>
-      </p>
-      
-      <p>
-      <label>Special Instructions
-      <textarea name="comments" maxlength="500"></textarea>
-      </label>
-      </p> -->
-
-    <!-- <thead>
-        <tr>
-          <th></th>
-          <th>Planned Expenses</th>
-          <th>Month 1</th>
-          <th>Month 2</th>
-          <th>Month 3</th>
-          <th>Total Year</th>
-        </tr>
-      </thead>
-      <tbody class="tableBody">
-        <tr>
-          <th>2022</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>2021</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        </tbody>
-      </table>
-     </div>
-      </div> -->
     <div>
       <canvas id="chart"></canvas>
     </div>
-    <!-- <form
-      class="myForm"
-      method="get"
-      enctype="application/x-www-form-urlencoded"
-      action="/html/codes/html_form_handler.cfm"
-    ></form> -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
       integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
