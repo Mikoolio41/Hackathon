@@ -1,6 +1,6 @@
 //Define Global Variables for easier use
 
-const fullName = document.getElementById("fullName").value;
+// const fullName = document.getElementById("fullName").value;
 // const income = document.getElementById("income").value;
 document
   .querySelector(`button[name="submit"]`)
@@ -30,125 +30,93 @@ let categoryColor = {
     "magenta",
   ],
 };
-let sampleMonth1 = {
-  name: "January",
-  year: 2022,
-  currency: "\u20AC",
-  income: 30000,
-  mortgage: 6000,
-  utilities: 5000,
-  healthcare: 4000,
-  insurance: 3000,
-  groceries: 2000,
-  vacation: 2500,
-  lifestyle: 3500,
-  entertainment: 2500,
-  shopping: 1500,
+
+let expenseArray = {
+  month: ["January"],
+  income: [30000],
+  mortgage: [6000],
+  utilities: [5000],
+  healthcare: [4000],
+  insurance: [3000],
+  groceries: [2000],
+  vacation: [2500],
+  lifestyle: [3500],
+  entertainment: [2500],
+  shopping: [1500],
 };
-let sampleMonth2 = {
-  name: "February",
-  year: 2022,
-  currency: "\u20AC",
-  income: 30000,
-  mortgage: 5000,
-  utilities: 4000,
-  healthcare: 3000,
-  insurance: 2000,
-  groceries: 1000,
-  vacation: 3500,
-  lifestyle: 4500,
-  entertainment: 5500,
-  shopping: 2500,
+let percentArray = {
+  month: ["January"],
+  income: [30000],
+  mortgage: [20],
+  utilities: [16.7],
+  healthcare: [13.3],
+  insurance: [10],
+  groceries: [6.7],
+  vacation: [8.3],
+  lifestyle: [11.7],
+  entertainment: [8.3],
+  shopping: [5],
 };
 
 // document
 //   .querySelector(`input[name="submit"]`)
 //   .addEventListener("submit", getData);
 
-class MonthExpense {
-  constructor(
-    name,
-    year,
-    currency,
-    income,
-    mortgage,
-    utilities,
-    healthcare,
-    insurance,
-    groceries,
-    vacation,
-    lifestyle,
-    entertainment,
-    shopping
-  ) {
-    this.name = name;
-    this.year = year;
-    this.currency = currency;
-    this.income = income;
-    this.mortgage = mortgage;
-    this.utilities = utilities;
-    this.healthcare = healthcare;
-    this.insurance = insurance;
-    this.groceries = groceries;
-    this.vacation = vacation;
-    this.lifestyle = lifestyle;
-    this.entertainment = entertainment;
-    this.shopping = shopping;
-  }
-}
+// Fetch the data from the HTML form
+
 function getData(e) {
   e.preventDefault();
-  // let a = document.getElementById("month").value;
+
   const ctx = document.getElementById("chartsum");
 
   const expenseChart = new Chart(ctx, {
     type: "bar",
     data: {
-      labels: [sampleMonth1.name, sampleMonth2.name],
+      labels: expenseArray.month,
       datasets: [
         {
           label: categoryColor.category[0],
-          data: [sampleMonth1.mortgage, sampleMonth2.mortgage],
+          data: expenseArray.mortgage,
           backgroundColor: categoryColor.color[0],
         },
         {
           label: categoryColor.category[1],
-          data: [sampleMonth1.utilities, sampleMonth2.utilities],
+          data: expenseArray.utilities,
           backgroundColor: categoryColor.color[1],
         },
         {
           label: categoryColor.category[2],
-          data: [sampleMonth1.healthcare, sampleMonth2.healthcare],
+          data: expenseArray.healthcare,
           backgroundColor: categoryColor.color[2],
         },
         {
           label: categoryColor.category[3],
-          data: [sampleMonth1.insurance, sampleMonth2.insurance],
+          data: expenseArray.insurance,
           backgroundColor: categoryColor.color[3],
         },
         {
           label: categoryColor.category[4],
-          data: [sampleMonth1.groceries, sampleMonth2.groceries],
+          data: expenseArray.groceries,
           backgroundColor: categoryColor.color[4],
         },
         {
           label: categoryColor.category[5],
-          data: [sampleMonth1.vacation, sampleMonth2.vacation],
+          data: expenseArray.vacation,
           backgroundColor: categoryColor.color[5],
         },
         {
           label: categoryColor.category[6],
-          data: [sampleMonth1.lifestyle, sampleMonth2.lifestyle],
+          data: expenseArray.lifestyle,
           backgroundColor: categoryColor.color[6],
         },
         {
           label: categoryColor.category[7],
-          data: [sampleMonth1.entertainment, sampleMonth2.entertainment],
+          data: expenseArray.entertainment,
           backgroundColor: categoryColor.color[7],
         },
         {
           label: categoryColor.category[8],
-          data: [sampleMonth1.shopping, sampleMonth2.shopping],
+          data: expenseArray.shopping,
           backgroundColor: categoryColor.color[8],
         },
       ],
@@ -167,10 +135,9 @@ function getData(e) {
         },
         y: {
           stacked: true,
-
           title: {
             display: true,
-            text: sampleMonth1.currency,
+            text: "NIS",
             color: "#191",
           },
         },
@@ -183,51 +150,51 @@ function getData(e) {
   const percentChart = new Chart(ctx1, {
     type: "bar",
     data: {
-      labels: [sampleMonth1.name, sampleMonth2.name],
+      labels: percentArray.month,
       datasets: [
         {
           label: categoryColor.category[0],
-          data: [sampleMonth1.mortgage, sampleMonth2.mortgage],
+          data: percentArray.mortgage,
           backgroundColor: categoryColor.color[0],
         },
         {
           label: categoryColor.category[1],
-          data: [sampleMonth1.utilities, sampleMonth2.utilities],
+          data: percentArray.utilities,
           backgroundColor: categoryColor.color[1],
         },
         {
           label: categoryColor.category[2],
-          data: [sampleMonth1.healthcare, sampleMonth2.healthcare],
+          data: percentArray.healthcare,
           backgroundColor: categoryColor.color[2],
         },
         {
           label: categoryColor.category[3],
-          data: [sampleMonth1.insurance, sampleMonth2.insurance],
+          data: percentArray.insurance,
           backgroundColor: categoryColor.color[3],
         },
         {
           label: categoryColor.category[4],
-          data: [sampleMonth1.groceries, sampleMonth2.groceries],
+          data: percentArray.groceries,
           backgroundColor: categoryColor.color[4],
         },
         {
           label: categoryColor.category[5],
-          data: [sampleMonth1.vacation, sampleMonth2.vacation],
+          data: percentArray.vacation,
           backgroundColor: categoryColor.color[5],
         },
         {
           label: categoryColor.category[6],
-          data: [sampleMonth1.lifestyle, sampleMonth2.lifestyle],
+          data: percentArray.lifestyle,
           backgroundColor: categoryColor.color[6],
         },
         {
           label: categoryColor.category[7],
-          data: [sampleMonth1.entertainment, sampleMonth2.entertainment],
+          data: percentArray.entertainment,
           backgroundColor: categoryColor.color[7],
         },
         {
           label: categoryColor.category[8],
-          data: [sampleMonth1.shopping, sampleMonth2.shopping],
+          data: percentArray.shopping,
           backgroundColor: categoryColor.color[8],
         },
       ],
@@ -246,10 +213,9 @@ function getData(e) {
         },
         y: {
           stacked: true,
-
           title: {
             display: true,
-            text: "Percentage",
+            text: "NIS",
             color: "#191",
           },
         },
@@ -257,45 +223,79 @@ function getData(e) {
     },
   });
 
-  let newMonth = new MonthExpense(
-    document.querySelector(`input[name="month"]`).value,
-    document.querySelector(`input[name="year"]`).value,
-    document.querySelector(`select[name="currency"]`).value,
-    Number(document.querySelector(`input[name="customer_income"]`)),
-    Number(document.querySelector(`input[name="mortgage"]`)),
-    Number(document.querySelector(`input[name="utilities"]`)),
-    Number(document.querySelector(`input[name="healthcare"]`)),
-    Number(document.querySelector(`input[name="insurance"]`)),
-    Number(document.querySelector(`input[name="groceries"]`)),
-    Number(document.querySelector(`input[name="vacation"]`)),
-    Number(document.querySelector(`input[name="lifestyle"]`)),
-    Number(document.querySelector(`input[name="entertainment"]`)),
-    Number(document.querySelector(`input[name="shopping"]`))
+  // Append Data to Arrays
+
+  let month = document.querySelector(`input[name="month"]`).value;
+  let income = Number(
+    document.querySelector(`input[name="customer_income"]`).value
   );
+  let mortgage = Number(document.querySelector(`input[name="mortgage"]`).value);
+  let utilities = Number(
+    document.querySelector(`input[name="utilities"]`).value
+  );
+  let healthcare = Number(
+    document.querySelector(`input[name="healthcare"]`).value
+  );
+  let insurance = Number(
+    document.querySelector(`input[name="insurance"]`).value
+  );
+  let groceries = Number(
+    document.querySelector(`input[name="groceries"]`).value
+  );
+  let vacation = Number(document.querySelector(`input[name="vacation"]`).value);
+  let lifestyle = Number(
+    document.querySelector(`input[name="lifestyle"]`).value
+  );
+  let entertainment = Number(
+    document.querySelector(`input[name="entertainment"]`).value
+  );
+  let shopping = Number(document.querySelector(`input[name="shopping"]`).value);
 
-  // function newDataset() {
-  //   for (i = 4; i < 13; i++) {
-  //     newMonth[i].value;
-  //   }
-  // }
+  let newMonth = {
+    month: month,
+    income: income,
+    mortgage: mortgage,
+    utilities: utilities,
+    healthcare: healthcare,
+    insurance: insurance,
+    groceries: groceries,
+    vacation: vacation,
+    lifestyle: lifestyle,
+    entertainment: entertainment,
+    shopping: shopping,
+  };
 
-  function addData(chart, label, data) {
-    chart.data.labels.push(label);
-    chart.data.datasets.forEach((dataset) => {
-      dataset.data.push(data);
-    });
-    chart.update();
+  let newMonthPercent = {
+    month: month,
+    income: income,
+    mortgage: Number(((mortgage / income) * 100).toFixed(1)),
+    utilities: Number(((utilities / income) * 100).toFixed(1)),
+    healthcare: Number(((healthcare / income) * 100).toFixed(1)),
+    insurance: Number(((insurance / income) * 100).toFixed(1)),
+    groceries: Number(((groceries / income) * 100).toFixed(1)),
+    vacation: Number(((vacation / income) * 100).toFixed(1)),
+    lifestyle: Number(((lifestyle / income) * 100).toFixed(1)),
+    entertainment: Number(((entertainment / income) * 100).toFixed(1)),
+    shopping: Number(((shopping / income) * 100).toFixed(1)),
+  };
+
+  for (let i in expenseArray) {
+    expenseArray[i].push(newMonth[i]);
   }
 
-  addData(expenseChart, newMonth.name, newDataset);
+  for (let i in percentArray) {
+    percentArray[i].push(newMonthPercent[i]);
+  }
 
-  // expenseChart.data.labels.push(newMonth.name);
-  // expenseChart.data.datasets[0].data.push(newMonth.mortgage);
-  // console.log(a);
+  expenseChart.update();
+  percentChart.update();
+
   console.log(document.querySelector(`input[name="month"]`).value);
   console.log(newMonth);
-  console.log(newMonth.mortgage);
-  console.log(expenseChart.data.datasets[0].data);
-  console.log(expenseChart.data.datasets);
-  // return newMonth;
+
+  // Test stuff
+  // console.log(expenseChart.data.datasets[0].data);
+  // console.log(expenseChart.data.datasets);
+  console.log(expenseArray);
+  console.log(percentArray);
 }
