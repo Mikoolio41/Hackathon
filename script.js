@@ -58,6 +58,161 @@ let percentArray = {
   shopping: [5],
 };
 
+const ctx = document.getElementById("chartsum");
+
+const expenseChart = new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: expenseArray.month,
+    datasets: [
+      {
+        label: categoryColor.category[0],
+        data: expenseArray.mortgage,
+        backgroundColor: categoryColor.color[0],
+      },
+      {
+        label: categoryColor.category[1],
+        data: expenseArray.utilities,
+        backgroundColor: categoryColor.color[1],
+      },
+      {
+        label: categoryColor.category[2],
+        data: expenseArray.healthcare,
+        backgroundColor: categoryColor.color[2],
+      },
+      {
+        label: categoryColor.category[3],
+        data: expenseArray.insurance,
+        backgroundColor: categoryColor.color[3],
+      },
+      {
+        label: categoryColor.category[4],
+        data: expenseArray.groceries,
+        backgroundColor: categoryColor.color[4],
+      },
+      {
+        label: categoryColor.category[5],
+        data: expenseArray.vacation,
+        backgroundColor: categoryColor.color[5],
+      },
+      {
+        label: categoryColor.category[6],
+        data: expenseArray.lifestyle,
+        backgroundColor: categoryColor.color[6],
+      },
+      {
+        label: categoryColor.category[7],
+        data: expenseArray.entertainment,
+        backgroundColor: categoryColor.color[7],
+      },
+      {
+        label: categoryColor.category[8],
+        data: expenseArray.shopping,
+        backgroundColor: categoryColor.color[8],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    scales: {
+      x: {
+        stacked: true,
+        title: {
+          display: true,
+          text: "Month",
+          color: "#191",
+        },
+      },
+      y: {
+        stacked: true,
+        title: {
+          display: true,
+          text: "NIS",
+          color: "#191",
+        },
+      },
+    },
+  },
+});
+
+const ctx1 = document.getElementById("chartpercent");
+
+const percentChart = new Chart(ctx1, {
+  type: "bar",
+  data: {
+    labels: percentArray.month,
+    datasets: [
+      {
+        label: categoryColor.category[0],
+        data: percentArray.mortgage,
+        backgroundColor: categoryColor.color[0],
+      },
+      {
+        label: categoryColor.category[1],
+        data: percentArray.utilities,
+        backgroundColor: categoryColor.color[1],
+      },
+      {
+        label: categoryColor.category[2],
+        data: percentArray.healthcare,
+        backgroundColor: categoryColor.color[2],
+      },
+      {
+        label: categoryColor.category[3],
+        data: percentArray.insurance,
+        backgroundColor: categoryColor.color[3],
+      },
+      {
+        label: categoryColor.category[4],
+        data: percentArray.groceries,
+        backgroundColor: categoryColor.color[4],
+      },
+      {
+        label: categoryColor.category[5],
+        data: percentArray.vacation,
+        backgroundColor: categoryColor.color[5],
+      },
+      {
+        label: categoryColor.category[6],
+        data: percentArray.lifestyle,
+        backgroundColor: categoryColor.color[6],
+      },
+      {
+        label: categoryColor.category[7],
+        data: percentArray.entertainment,
+        backgroundColor: categoryColor.color[7],
+      },
+      {
+        label: categoryColor.category[8],
+        data: percentArray.shopping,
+        backgroundColor: categoryColor.color[8],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    scales: {
+      x: {
+        stacked: true,
+        title: {
+          display: true,
+          text: "Month",
+          color: "#191",
+        },
+      },
+      y: {
+        stacked: true,
+        title: {
+          display: true,
+          text: "NIS",
+          color: "#191",
+        },
+      },
+    },
+  },
+});
 // document
 //   .querySelector(`input[name="submit"]`)
 //   .addEventListener("submit", getData);
@@ -67,163 +222,7 @@ let percentArray = {
 function getData(e) {
   e.preventDefault();
 
-  const ctx = document.getElementById("chartsum");
-
-  const expenseChart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: expenseArray.month,
-      datasets: [
-        {
-          label: categoryColor.category[0],
-          data: expenseArray.mortgage,
-          backgroundColor: categoryColor.color[0],
-        },
-        {
-          label: categoryColor.category[1],
-          data: expenseArray.utilities,
-          backgroundColor: categoryColor.color[1],
-        },
-        {
-          label: categoryColor.category[2],
-          data: expenseArray.healthcare,
-          backgroundColor: categoryColor.color[2],
-        },
-        {
-          label: categoryColor.category[3],
-          data: expenseArray.insurance,
-          backgroundColor: categoryColor.color[3],
-        },
-        {
-          label: categoryColor.category[4],
-          data: expenseArray.groceries,
-          backgroundColor: categoryColor.color[4],
-        },
-        {
-          label: categoryColor.category[5],
-          data: expenseArray.vacation,
-          backgroundColor: categoryColor.color[5],
-        },
-        {
-          label: categoryColor.category[6],
-          data: expenseArray.lifestyle,
-          backgroundColor: categoryColor.color[6],
-        },
-        {
-          label: categoryColor.category[7],
-          data: expenseArray.entertainment,
-          backgroundColor: categoryColor.color[7],
-        },
-        {
-          label: categoryColor.category[8],
-          data: expenseArray.shopping,
-          backgroundColor: categoryColor.color[8],
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: true,
-      scales: {
-        x: {
-          stacked: true,
-          title: {
-            display: true,
-            text: "Month",
-            color: "#191",
-          },
-        },
-        y: {
-          stacked: true,
-          title: {
-            display: true,
-            text: "NIS",
-            color: "#191",
-          },
-        },
-      },
-    },
-  });
-
-  const ctx1 = document.getElementById("chartpercent");
-
-  const percentChart = new Chart(ctx1, {
-    type: "bar",
-    data: {
-      labels: percentArray.month,
-      datasets: [
-        {
-          label: categoryColor.category[0],
-          data: percentArray.mortgage,
-          backgroundColor: categoryColor.color[0],
-        },
-        {
-          label: categoryColor.category[1],
-          data: percentArray.utilities,
-          backgroundColor: categoryColor.color[1],
-        },
-        {
-          label: categoryColor.category[2],
-          data: percentArray.healthcare,
-          backgroundColor: categoryColor.color[2],
-        },
-        {
-          label: categoryColor.category[3],
-          data: percentArray.insurance,
-          backgroundColor: categoryColor.color[3],
-        },
-        {
-          label: categoryColor.category[4],
-          data: percentArray.groceries,
-          backgroundColor: categoryColor.color[4],
-        },
-        {
-          label: categoryColor.category[5],
-          data: percentArray.vacation,
-          backgroundColor: categoryColor.color[5],
-        },
-        {
-          label: categoryColor.category[6],
-          data: percentArray.lifestyle,
-          backgroundColor: categoryColor.color[6],
-        },
-        {
-          label: categoryColor.category[7],
-          data: percentArray.entertainment,
-          backgroundColor: categoryColor.color[7],
-        },
-        {
-          label: categoryColor.category[8],
-          data: percentArray.shopping,
-          backgroundColor: categoryColor.color[8],
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: true,
-      scales: {
-        x: {
-          stacked: true,
-          title: {
-            display: true,
-            text: "Month",
-            color: "#191",
-          },
-        },
-        y: {
-          stacked: true,
-          title: {
-            display: true,
-            text: "NIS",
-            color: "#191",
-          },
-        },
-      },
-    },
-  });
-
-  // Append Data to Arrays
+  // Create variables for the data
 
   let month = document.querySelector(`input[name="month"]`).value;
   let income = Number(
@@ -278,6 +277,16 @@ function getData(e) {
     entertainment: Number(((entertainment / income) * 100).toFixed(1)),
     shopping: Number(((shopping / income) * 100).toFixed(1)),
   };
+
+  // Append data to table
+
+  let expenseTable = document.querySelector(`table[class="greenTable"]`);
+  let expenseTH = document.querySelector("thead");
+  let newColumnHead = expenseTH.appendChild(document.createElement("th"));
+  let newThText = document.createTextNode(newMonth.month);
+  newColumnHead.appendChild(newThText);
+
+  // Append Data to Chart arrays
 
   for (let i in expenseArray) {
     expenseArray[i].push(newMonth[i]);
