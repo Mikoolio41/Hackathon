@@ -38,45 +38,42 @@
     </div>
     <div class="formTableContainer">
       <div class="formContainer">
-        <form class="myForm" method="get">
-          <fieldset class="leftGrid personalDetails">
-            <legend>Personal Details</legend>
-            <p class="leftGrid personalDetails">Please enter your name and email:</p>
-            <p class="leftGrid namePerson">
-              <label
-                >Name
-                <input
-                  type="text"
-                  id="fullName"
-                  name="customer_name"
-                  required
-                />
-              </label>
-            </p>
-          </fieldset>
-          <p class="leftGrid emailPerson">
+        <fieldset class="leftGrid personalDetails">
+          <legend>Personal Details</legend>
+          <p class="leftGrid personalDetails">
+            Please enter your name and email:
+          </p>
+          <p class="leftGrid namePerson">
             <label
-              >Email
-              <input type="email" name="email_address" />
+              >Name
+              <input type="text" id="fullName" name="customer_name" required />
             </label>
           </p>
-          <fieldset class="rightGrid incomeTitle">
-            <legend>Income</legend>
-            <p>Please enter your monthly income</p>
-            <p class="rightGrid incomeInput">
-              <label
-                >Income
-                <input type="text" name="customer_income" required />
-              </label>
-            </p>
-          </fieldset>
-          <fieldset class="leftGrid distTitle">
-            <legend>Distribution of Expenses</legend>
-            <p class="leftGrid distTitle">
-              Please enter your estimated monthly budget for each of the
-              following:
-            </p>
-          </fieldset>
+        </fieldset>
+        <p class="leftGrid emailPerson">
+          <label
+            >Email
+            <input type="email" name="email_address" />
+          </label>
+        </p>
+        <fieldset class="rightGrid incomeTitle">
+          <legend>Income</legend>
+          <p>Please enter your monthly income</p>
+          <p class="rightGrid incomeInput">
+            <label
+              >Income
+              <input type="text" name="customer_income" required />
+            </label>
+          </p>
+        </fieldset>
+        <fieldset class="leftGrid distTitle">
+          <legend>Distribution of Expenses</legend>
+          <p class="leftGrid distTitle">
+            Please enter your estimated monthly budget for each of the
+            following:
+          </p>
+        </fieldset>
+        <form class="myForm" method="get">
           <p class="leftGrid month">
             <label
               >Month
@@ -94,9 +91,9 @@
               >Please select currency:
               <select id="currency" name="currency">
                 <option value="" selected="selected">Select</option>
-                <option value="Dollar">Dollar</option>
-                <option value="Euro">Euro</option>
-                <option value="Shekel">NIS</option>
+                <option value="$">Dollar</option>
+                <option value="\u20AC">Euro</option>
+                <option value="NIS">New Israeli Shekel</option>
               </select>
             </label>
           </p>
@@ -252,9 +249,26 @@
         </table>
       </div>
     </div>
-    <div>
-      <canvas id="chart"></canvas>
-    </div>
+    <section class="container">
+      <div
+        class="chart-container"
+        style="position: relative; height: 40vh; width: 80vw"
+      >
+        <div>
+          <canvas class="chart" id="chartsum"></canvas>
+        </div>
+      </div>
+
+      <div
+        class="chart-container"
+        style="position: relative; height: 40vh; width: 80vw"
+      >
+        <div>
+          <canvas class="chart" id="chartpercent"></canvas>
+        </div>
+      </div>
+    </section>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
       integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
