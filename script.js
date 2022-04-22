@@ -32,32 +32,187 @@ let categoryColor = {
 };
 
 let expenseArray = {
-  month: ["January"],
-  income: [30000],
-  mortgage: [6000],
-  utilities: [5000],
-  healthcare: [4000],
-  insurance: [3000],
-  groceries: [2000],
-  vacation: [2500],
-  lifestyle: [3500],
-  entertainment: [2500],
-  shopping: [1500],
+  month: [],
+  income: [],
+  mortgage: [],
+  utilities: [],
+  healthcare: [],
+  insurance: [],
+  groceries: [],
+  vacation: [],
+  lifestyle: [],
+  entertainment: [],
+  shopping: [],
 };
 let percentArray = {
-  month: ["January"],
-  income: [30000],
-  mortgage: [20],
-  utilities: [16.7],
-  healthcare: [13.3],
-  insurance: [10],
-  groceries: [6.7],
-  vacation: [8.3],
-  lifestyle: [11.7],
-  entertainment: [8.3],
-  shopping: [5],
+  month: [],
+  income: [],
+  mortgage: [],
+  utilities: [],
+  healthcare: [],
+  insurance: [],
+  groceries: [],
+  vacation: [],
+  lifestyle: [],
+  entertainment: [],
+  shopping: [],
 };
 
+const ctx = document.getElementById("chartsum");
+
+const expenseChart = new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: expenseArray.month,
+    datasets: [
+      {
+        label: categoryColor.category[0],
+        data: expenseArray.mortgage,
+        backgroundColor: categoryColor.color[0],
+      },
+      {
+        label: categoryColor.category[1],
+        data: expenseArray.utilities,
+        backgroundColor: categoryColor.color[1],
+      },
+      {
+        label: categoryColor.category[2],
+        data: expenseArray.healthcare,
+        backgroundColor: categoryColor.color[2],
+      },
+      {
+        label: categoryColor.category[3],
+        data: expenseArray.insurance,
+        backgroundColor: categoryColor.color[3],
+      },
+      {
+        label: categoryColor.category[4],
+        data: expenseArray.groceries,
+        backgroundColor: categoryColor.color[4],
+      },
+      {
+        label: categoryColor.category[5],
+        data: expenseArray.vacation,
+        backgroundColor: categoryColor.color[5],
+      },
+      {
+        label: categoryColor.category[6],
+        data: expenseArray.lifestyle,
+        backgroundColor: categoryColor.color[6],
+      },
+      {
+        label: categoryColor.category[7],
+        data: expenseArray.entertainment,
+        backgroundColor: categoryColor.color[7],
+      },
+      {
+        label: categoryColor.category[8],
+        data: expenseArray.shopping,
+        backgroundColor: categoryColor.color[8],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    scales: {
+      x: {
+        stacked: true,
+        title: {
+          display: true,
+          text: "Month",
+          color: "#191",
+        },
+      },
+      y: {
+        stacked: true,
+        title: {
+          display: true,
+          text: "NIS",
+          color: "#191",
+        },
+      },
+    },
+  },
+});
+
+const ctx1 = document.getElementById("chartpercent");
+
+const percentChart = new Chart(ctx1, {
+  type: "bar",
+  data: {
+    labels: percentArray.month,
+    datasets: [
+      {
+        label: categoryColor.category[0],
+        data: percentArray.mortgage,
+        backgroundColor: categoryColor.color[0],
+      },
+      {
+        label: categoryColor.category[1],
+        data: percentArray.utilities,
+        backgroundColor: categoryColor.color[1],
+      },
+      {
+        label: categoryColor.category[2],
+        data: percentArray.healthcare,
+        backgroundColor: categoryColor.color[2],
+      },
+      {
+        label: categoryColor.category[3],
+        data: percentArray.insurance,
+        backgroundColor: categoryColor.color[3],
+      },
+      {
+        label: categoryColor.category[4],
+        data: percentArray.groceries,
+        backgroundColor: categoryColor.color[4],
+      },
+      {
+        label: categoryColor.category[5],
+        data: percentArray.vacation,
+        backgroundColor: categoryColor.color[5],
+      },
+      {
+        label: categoryColor.category[6],
+        data: percentArray.lifestyle,
+        backgroundColor: categoryColor.color[6],
+      },
+      {
+        label: categoryColor.category[7],
+        data: percentArray.entertainment,
+        backgroundColor: categoryColor.color[7],
+      },
+      {
+        label: categoryColor.category[8],
+        data: percentArray.shopping,
+        backgroundColor: categoryColor.color[8],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    scales: {
+      x: {
+        stacked: true,
+        title: {
+          display: true,
+          text: "Month",
+          color: "#191",
+        },
+      },
+      y: {
+        stacked: true,
+        title: {
+          display: true,
+          text: "NIS",
+          color: "#191",
+        },
+      },
+    },
+  },
+});
 // document
 //   .querySelector(`input[name="submit"]`)
 //   .addEventListener("submit", getData);
@@ -67,163 +222,7 @@ let percentArray = {
 function getData(e) {
   e.preventDefault();
 
-  const ctx = document.getElementById("chartsum");
-
-  const expenseChart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: expenseArray.month,
-      datasets: [
-        {
-          label: categoryColor.category[0],
-          data: expenseArray.mortgage,
-          backgroundColor: categoryColor.color[0],
-        },
-        {
-          label: categoryColor.category[1],
-          data: expenseArray.utilities,
-          backgroundColor: categoryColor.color[1],
-        },
-        {
-          label: categoryColor.category[2],
-          data: expenseArray.healthcare,
-          backgroundColor: categoryColor.color[2],
-        },
-        {
-          label: categoryColor.category[3],
-          data: expenseArray.insurance,
-          backgroundColor: categoryColor.color[3],
-        },
-        {
-          label: categoryColor.category[4],
-          data: expenseArray.groceries,
-          backgroundColor: categoryColor.color[4],
-        },
-        {
-          label: categoryColor.category[5],
-          data: expenseArray.vacation,
-          backgroundColor: categoryColor.color[5],
-        },
-        {
-          label: categoryColor.category[6],
-          data: expenseArray.lifestyle,
-          backgroundColor: categoryColor.color[6],
-        },
-        {
-          label: categoryColor.category[7],
-          data: expenseArray.entertainment,
-          backgroundColor: categoryColor.color[7],
-        },
-        {
-          label: categoryColor.category[8],
-          data: expenseArray.shopping,
-          backgroundColor: categoryColor.color[8],
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: true,
-      scales: {
-        x: {
-          stacked: true,
-          title: {
-            display: true,
-            text: "Month",
-            color: "#191",
-          },
-        },
-        y: {
-          stacked: true,
-          title: {
-            display: true,
-            text: "NIS",
-            color: "#191",
-          },
-        },
-      },
-    },
-  });
-
-  const ctx1 = document.getElementById("chartpercent");
-
-  const percentChart = new Chart(ctx1, {
-    type: "bar",
-    data: {
-      labels: percentArray.month,
-      datasets: [
-        {
-          label: categoryColor.category[0],
-          data: percentArray.mortgage,
-          backgroundColor: categoryColor.color[0],
-        },
-        {
-          label: categoryColor.category[1],
-          data: percentArray.utilities,
-          backgroundColor: categoryColor.color[1],
-        },
-        {
-          label: categoryColor.category[2],
-          data: percentArray.healthcare,
-          backgroundColor: categoryColor.color[2],
-        },
-        {
-          label: categoryColor.category[3],
-          data: percentArray.insurance,
-          backgroundColor: categoryColor.color[3],
-        },
-        {
-          label: categoryColor.category[4],
-          data: percentArray.groceries,
-          backgroundColor: categoryColor.color[4],
-        },
-        {
-          label: categoryColor.category[5],
-          data: percentArray.vacation,
-          backgroundColor: categoryColor.color[5],
-        },
-        {
-          label: categoryColor.category[6],
-          data: percentArray.lifestyle,
-          backgroundColor: categoryColor.color[6],
-        },
-        {
-          label: categoryColor.category[7],
-          data: percentArray.entertainment,
-          backgroundColor: categoryColor.color[7],
-        },
-        {
-          label: categoryColor.category[8],
-          data: percentArray.shopping,
-          backgroundColor: categoryColor.color[8],
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: true,
-      scales: {
-        x: {
-          stacked: true,
-          title: {
-            display: true,
-            text: "Month",
-            color: "#191",
-          },
-        },
-        y: {
-          stacked: true,
-          title: {
-            display: true,
-            text: "NIS",
-            color: "#191",
-          },
-        },
-      },
-    },
-  });
-
-  // Append Data to Arrays
+  // Create variables for the data
 
   let month = document.querySelector(`input[name="month"]`).value;
   let income = Number(
@@ -278,6 +277,40 @@ function getData(e) {
     entertainment: Number(((entertainment / income) * 100).toFixed(1)),
     shopping: Number(((shopping / income) * 100).toFixed(1)),
   };
+
+  // Append data to table
+
+  function addColumn(tblId) {
+    const tblHeadObj = document.getElementById(tblId).tHead;
+    for (h = 0; h < tblHeadObj.rows.length; h++) {
+      let newTH = document.createElement("th");
+      tblHeadObj.rows[h].appendChild(newTH);
+      newTH.innerHTML = newMonth.month;
+    }
+
+    let tblBodyObj = document.getElementById(tblId).tBodies[0];
+    let cellText = [];
+    for (x in newMonth) {
+      cellText.push(newMonth[x]);
+    }
+    console.log(cellText);
+    for (i = 0; i < tblBodyObj.rows.length; i++) {
+      let newCell = tblBodyObj.rows[i].insertCell(-1);
+      newCell.innerHTML = cellText[i + 2];
+    }
+  }
+  function deleteColumn(tblId) {
+    let allRows = document.getElementById(tblId).rows;
+    for (i = 0; i < allRows.length; i++) {
+      if (allRows[i].cells.length > 1) {
+        allRows[i].deleteCell(-1);
+      }
+    }
+  }
+
+  addColumn("expensesTable");
+
+  // Append Data to Chart arrays
 
   for (let i in expenseArray) {
     expenseArray[i].push(newMonth[i]);
