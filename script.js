@@ -280,11 +280,35 @@ function getData(e) {
 
   // Append data to table
 
-  let expenseTable = document.querySelector(`table[class="greenTable"]`);
-  let expenseTH = document.querySelector("thead");
-  let newColumnHead = expenseTH.appendChild(document.createElement("th"));
-  let newThText = document.createTextNode(newMonth.month);
-  newColumnHead.appendChild(newThText);
+  function addColumn(tblId) {
+    const tblHeadObj = document.getElementById(tblId).tHead;
+    for (h = 0; h < tblHeadObj.rows.length; h++) {
+      let newTH = document.createElement("th");
+      tblHeadObj.rows[h].appendChild(newTH);
+      newTH.innerHTML = newMonth.month;
+    }
+
+    let tblBodyObj = document.getElementById(tblId).tBodies[0];
+    let cellText = [];
+    for (x in newMonth) {
+      cellText.push(newMonth[x]);
+    }
+    console.log(cellText);
+    for (i = 0; i < tblBodyObj.rows.length; i++) {
+      let newCell = tblBodyObj.rows[i].insertCell(-1);
+      newCell.innerHTML = cellText[i + 2];
+    }
+  }
+  function deleteColumn(tblId) {
+    let allRows = document.getElementById(tblId).rows;
+    for (i = 0; i < allRows.length; i++) {
+      if (allRows[i].cells.length > 1) {
+        allRows[i].deleteCell(-1);
+      }
+    }
+  }
+
+  addColumn("expensesTable");
 
   // Append Data to Chart arrays
 
