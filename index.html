@@ -28,10 +28,12 @@
     <div class="jumbotron text-center mt-auto">
       <img class="buckLogo" src="./pics/logoBuck2.png" alt="logo" />
       <h1 class="display-4">My name is Buck!</h1>
-      <p class="lead" style="font-size:22px;">
+      <p class="lead" style="font-size: 22px">
         I was created to help YOU manage all your financial resources in one
-        place. <br>
-        Just tell me your monthly estimated budget for the following categories, and <br> <strong>I'll take care of everything! </strong>
+        place. <br />
+        Just tell me your monthly estimated budget for the following categories,
+        and <br />
+        <strong>I'll take care of everything! </strong>
       </p>
     </div>
     <div class="formTableContainer">
@@ -45,16 +47,21 @@
             <p class="leftGrid namePerson">
               <label
                 >Name
-                <input type="text" id="fullName" name="customer_name" required />
+                <input
+                  type="text"
+                  id="fullName"
+                  name="customer_name"
+                  required
+                />
               </label>
             </p>
-          <p class="leftGrid emailPerson">
+            <!-- <p class="leftGrid emailPerson">
             <label
               >Email
               <input type="email" name="email_address" />
             </label>
-          </p>
-        </fieldset>
+          </p> -->
+          </fieldset>
           <fieldset class="rightGrid incomeTitle">
             <legend>Income</legend>
             <p>Please enter your monthly income</p>
@@ -72,112 +79,122 @@
               following:
             </p>
           </fieldset>
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="switchExpenseType"
+            />
+            <label class="form-check-label" for="switchExpenseType"
+              >Enter what you would like to spend in percentage</label
+            >
+          </div>
           <fieldset class="leftGrid month">
             <p>
               <label
                 >Month
-                <input type="text" id="month" name="month" />
+                <input type="text" id="month" name="month" required />
               </label>
             </p>
           </fieldset>
-          <fieldset class="leftGrid year">
-              <p>
-                  <label
-                    >Year
-                    <input type="text" id="year" name="year" />
-                  </label>
-                </p>
-          </fieldset>
-          <fieldset class="leftGrid currencySelect">
-              <p>
-                  <label
-                    >Please select currency:
-                    <select id="currency" name="currency">
-                      <option value="" selected="selected">Select</option>
-                      <option value="$">Dollar</option>
-                      <option value="\u20AC">Euro</option>
-                      <option value="NIS">New Israeli Shekel</option>
-                    </select>
-                  </label>
-                </p>
-          </fieldset>
-           <fieldset class="leftGrid mortgage">
-              <p>
-                  <label
-                    >Mortgage
-                    <input type="text" id="mortgage" name="mortgage" />
-                  </label>
-                </p>
-           </fieldset>
-            <fieldset class="leftGrid utilities">
-              <p>
-                  <label
-                    >Utilities
-                    <input type="text" id="utilities" name="utilities" />
-                  </label>
-                </p>
-            </fieldset>
-            <fieldset class="leftGrid health">
-              <p>
-                  <label
-                    >Health Care
-                    <input type="text" id="healthcare" name="healthcare" />
-                  </label>
-                </p>
-            </fieldset>
-            <fieldset class="rightGrid insurance">
-              <p>
-                  <label
-                    >Insurance
-                    <input type="text" id="insurance" name="insurance" />
-                  </label>
-                </p>    
-            </fieldset>
-            <fieldset class="rightGrid groceries">
-              <p>
-                  <label
-                    >Groceries
-                    <input type="text" id="groceries" name="groceries" />
-                  </label>
-                </p>    
-            </fieldset>
-            <fieldset class="rightGrid vacation">
-              <p>
-                  <label
-                    >Vacation
-                    <input type="text" id="vacation" name="vacation" />
-                  </label>
-                </p>    
-            </fieldset>
-            <fieldset class="rightGrid lifestyle">
-              <p>
-                  <label
-                    >Lifestyle (fitness, grooming)
-                    <input type="text" id="lifestyle" name="lifestyle" />
-                  </label>
-                </p>    
-            </fieldset>
-            <fieldset class="rightGrid entertainment">
-              <p>
-                  <label
-                    >Entertainment
-                    <input type="text" id="entertainment" name="entertainment" />
-                  </label>
-                </p>    
-            </fieldset>
-            <fieldset class="rightGrid shopping">
-              <p>
-                  <label
-                    >Shopping
-                    <input type="text" id="shopping" name="shopping" />
-                  </label>
-                </p>    
-            </fieldset>
+          <!-- <fieldset class="leftGrid year">
             <p>
-              <button name="submit">Submit</button>
+              <label
+                >Year
+                <input type="text" id="year" name="year" />
+              </label>
             </p>
-          </form>
-  
+          </fieldset> -->
+          <fieldset class="leftGrid currencySelect">
+            <p>
+              <label
+                >Please select currency:
+                <select id="currency" name="currency">
+                  <option value="" selected="selected">Select</option>
+                  <option value="$">Dollar</option>
+                  <option value="\u20AC">Euro</option>
+                  <option value="NIS">New Israeli Shekel</option>
+                </select>
+              </label>
+            </p>
+          </fieldset>
+          <fieldset class="leftGrid mortgage">
+            <p>
+              <label
+                >Mortgage
+                <input type="text" id="mortgage" name="mortgage" />
+              </label>
+            </p>
+          </fieldset>
+          <fieldset class="leftGrid utilities">
+            <p>
+              <label
+                >Utilities
+                <input type="text" id="utilities" name="utilities" />
+              </label>
+            </p>
+          </fieldset>
+          <fieldset class="leftGrid health">
+            <p>
+              <label
+                >Health Care
+                <input type="text" id="healthcare" name="healthcare" />
+              </label>
+            </p>
+          </fieldset>
+          <fieldset class="rightGrid insurance">
+            <p>
+              <label
+                >Insurance
+                <input type="text" id="insurance" name="insurance" />
+              </label>
+            </p>
+          </fieldset>
+          <fieldset class="rightGrid groceries">
+            <p>
+              <label
+                >Groceries
+                <input type="text" id="groceries" name="groceries" />
+              </label>
+            </p>
+          </fieldset>
+          <fieldset class="rightGrid vacation">
+            <p>
+              <label
+                >Vacation
+                <input type="text" id="vacation" name="vacation" />
+              </label>
+            </p>
+          </fieldset>
+          <fieldset class="rightGrid lifestyle">
+            <p>
+              <label
+                >Lifestyle (fitness, grooming)
+                <input type="text" id="lifestyle" name="lifestyle" />
+              </label>
+            </p>
+          </fieldset>
+          <fieldset class="rightGrid entertainment">
+            <p>
+              <label
+                >Entertainment
+                <input type="text" id="entertainment" name="entertainment" />
+              </label>
+            </p>
+          </fieldset>
+          <fieldset class="rightGrid shopping">
+            <p>
+              <label
+                >Shopping
+                <input type="text" id="shopping" name="shopping" />
+              </label>
+            </p>
+          </fieldset>
+          <p>
+            <button name="submit">Submit</button>
+          </p>
+        </form>
       </div>
       <div class="tableContainer">
         <fieldset class="tableHeader">
@@ -188,45 +205,35 @@
           <thead>
             <tr>
               <th></th>
-              <th>Planned Expenses</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th>Mortgage</th>
-              <td></td>
             </tr>
             <tr>
               <th>Utilities</th>
-              <td></td>
             </tr>
             <tr>
               <th>Health Care</th>
-              <td></td>
             </tr>
             <tr>
               <th>Insurance</th>
-              <td></td>
             </tr>
             <tr>
               <th>Groceries</th>
-              <td></td>
             </tr>
             <tr>
               <th>Vacation</th>
-              <td></td>
             </tr>
             <tr>
               <th>Lifestyle</th>
-              <td></td>
             </tr>
             <tr>
               <th>Entertainment</th>
-              <td></td>
             </tr>
             <tr>
               <th>Shopping</th>
-              <td></td>
             </tr>
           </tbody>
         </table>

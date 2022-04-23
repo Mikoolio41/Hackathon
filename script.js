@@ -6,6 +6,27 @@ document
   .querySelector(`button[name="submit"]`)
   .addEventListener("click", getData);
 
+// const testChange = () => {
+//   if (mySwitch.checked == true) {
+//     alert("checked");
+//   } else {
+//     alert("not checked");
+//   }
+// };
+
+let mySwitch = document.querySelector(`input[id="switchExpenseType"]`);
+
+const changeInput = () => {
+  const switchLabel = document.querySelector(`label[class="form-check-label"]`);
+  if (mySwitch.checked == true) {
+    switchLabel.innerHTML = "Enter what you actually spent";
+  } else {
+    switchLabel.innerHTML = "Enter what you would like to spend in percentage";
+  }
+};
+
+mySwitch.addEventListener("change", changeInput);
+
 let categoryColor = {
   category: [
     "mortgage",
@@ -213,6 +234,7 @@ const percentChart = new Chart(ctx1, {
     },
   },
 });
+
 // document
 //   .querySelector(`input[name="submit"]`)
 //   .addEventListener("submit", getData);
@@ -220,7 +242,7 @@ const percentChart = new Chart(ctx1, {
 // Fetch the data from the HTML form
 
 function getData(e) {
-  e.preventDefault();
+  // e.preventDefault();
 
   // Create variables for the data
 
@@ -250,6 +272,8 @@ function getData(e) {
   );
   let shopping = Number(document.querySelector(`input[name="shopping"]`).value);
 
+  // Create variables for the table and charts
+
   let newMonth = {
     month: month,
     income: income,
@@ -278,7 +302,64 @@ function getData(e) {
     shopping: Number(((shopping / income) * 100).toFixed(1)),
   };
 
+  // Validation Checks
+
+  function checkPercent() {
+    let sum =
+      mortgage +
+      utilities +
+      healthcare +
+      insurance +
+      groceries +
+      vacation +
+      lifestyle +
+      entertainment +
+      shopping;
+    console.log(sum);
+    if (sum != 100) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  function checkIncomeSum() {
+    let sum =
+      mortgage +
+      utilities +
+      healthcare +
+      insurance +
+      groceries +
+      vacation +
+      lifestyle +
+      entertainment +
+      shopping;
+    console.log(sum);
+    if (sum != newMonth.income) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   // Append data to table
+
+  function addPlanning(tblId) {
+    const tblHeadObj = document.getElementById(tblId).tHead;
+    let newTH = document.createElement("th");
+    tblHeadObj.rows[0].appendChild(newTH);
+    newTH.innerHTML = "Planned Expenses";
+
+    let tblBodyObj = document.getElementById(tblId).tBodies[0];
+    let cellText = [];
+    for (x in newMonth) {
+      cellText.push(Number((newMonth[x] / 100) * newMonth.income).toFixed(0));
+    }
+    for (i = 0; i < tblBodyObj.rows.length; i++) {
+      let newCell = tblBodyObj.rows[i].insertCell(-1);
+      newCell.innerHTML = cellText[i + 2];
+    }
+  }
 
   function addColumn(tblId) {
     const tblHeadObj = document.getElementById(tblId).tHead;
@@ -293,7 +374,7 @@ function getData(e) {
     for (x in newMonth) {
       cellText.push(newMonth[x]);
     }
-    console.log(cellText);
+
     for (i = 0; i < tblBodyObj.rows.length; i++) {
       let newCell = tblBodyObj.rows[i].insertCell(-1);
       newCell.innerHTML = cellText[i + 2];
@@ -308,27 +389,42 @@ function getData(e) {
     }
   }
 
-  addColumn("expensesTable");
-
   // Append Data to Chart arrays
 
-  for (let i in expenseArray) {
-    expenseArray[i].push(newMonth[i]);
+  function chartIt() {
+    for (let i in expenseArray) {
+      expenseArray[i].push(newMonth[i]);
+    }
+
+    for (let i in percentArray) {
+      percentArray[i].push(newMonthPercent[i]);
+    }
+
+    expenseChart.update();
+    percentChart.update();
   }
 
-  for (let i in percentArray) {
-    percentArray[i].push(newMonthPercent[i]);
+  if (mySwitch.checked == false) {
+    if (checkPercent() === true) {
+      addPlanning("expensesTable");
+    } else {
+      alert("The percents you entered do not add to 100");
+    }
+  } else {
+    if (checkIncomeSum() === true) {
+      addColumn("expensesTable");
+      chartIt();
+    } else {
+      alert("The sums you entered do not add to the month's income");
+    }
   }
 
-  expenseChart.update();
-  percentChart.update();
-
-  console.log(document.querySelector(`input[name="month"]`).value);
-  console.log(newMonth);
+  // console.log(document.querySelector(`input[name="month"]`).value);
+  // console.log(newMonth);
 
   // Test stuff
   // console.log(expenseChart.data.datasets[0].data);
   // console.log(expenseChart.data.datasets);
-  console.log(expenseArray);
-  console.log(percentArray);
+  // console.log(expenseArray);
+  // console.log(percentArray);
 }
