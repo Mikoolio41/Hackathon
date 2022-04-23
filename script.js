@@ -242,7 +242,7 @@ const percentChart = new Chart(ctx1, {
 // Fetch the data from the HTML form
 
 function getData(e) {
-  // e.preventDefault();
+  e.preventDefault();
 
   // Create variables for the data
 
