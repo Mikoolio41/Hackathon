@@ -186,8 +186,8 @@ legend p {
 }
 
 table.greenTable {
-  border: 1px solid #11814f;
-  background-color: #f1f1f1;
+  /* border: 1px solid #11814f;
+  background-color: #f1f1f1; */
   width: 450px;
   height: 200px;
   text-align: left;
@@ -202,18 +202,18 @@ table.greenTable tbody td {
   font-size: 13px;
   color: #000000;
 }
-table.greenTable tr:nth-child(even) {
-  background: #93dfc2;
-}
+/* table.greenTable tr:nth-child(even) { */
+  /* background: #93dfc2; */
+/* } */
 table.greenTable thead {
-  background: #11814f;
+  /* background: #11814f;
   background: -moz-linear-gradient(top, #4ca07b 0%, #288d60 66%, #11814f 100%);
   background: -webkit-linear-gradient(
     top,
     #4ca07b 0%,
     #288d60 66%,
     #11814f 100%
-  );
+  ); */
   background: linear-gradient(to bottom, #4ca07b 0%, #288d60 66%, #11814f 100%);
   border-bottom: 2px solid #444444;
 }
@@ -222,7 +222,7 @@ table.greenTable thead th {
   font-weight: bold;
   color: #ffffff;
   text-align: center;
-  border-left: 2px solid #6f8d79;
+  /* border-left: 2px solid #6f8d79; */
 }
 table.greenTable thead th:first-child {
   border-left: none;
