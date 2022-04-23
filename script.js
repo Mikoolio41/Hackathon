@@ -204,6 +204,9 @@ const expenseChart = new Chart(ctx, {
     ],
   },
   options: {
+    plugins: {
+      legend: false,
+    },
     responsive: true,
     maintainAspectRatio: true,
     scales: {
@@ -287,6 +290,9 @@ const percentChart = new Chart(ctx1, {
     ],
   },
   options: {
+    plugins: {
+      legend: false,
+    },
     responsive: true,
     maintainAspectRatio: true,
     scales: {
