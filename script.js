@@ -149,7 +149,7 @@ const expenseChart = new Chart(ctx, {
         stacked: true,
         title: {
           display: true,
-          text: "NIS",
+          text: document.querySelector(`select[id="currency"]`).value,
           color: "#191",
         },
       },
@@ -227,7 +227,7 @@ const percentChart = new Chart(ctx1, {
         stacked: true,
         title: {
           display: true,
-          text: "NIS",
+          text: document.querySelector(`select[id="currency"]`).value,
           color: "#191",
         },
       },
@@ -428,3 +428,4 @@ function getData(e) {
   // console.log(expenseArray);
   // console.log(percentArray);
 }
+console.log(document.querySelector(`select[id="currency"]`).value);
