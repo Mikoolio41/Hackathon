@@ -24,9 +24,9 @@ let currency = document.querySelector(`select[id="currency"]`);
 const changeInput = () => {
   const switchLabel = document.querySelector(`label[class="form-check-label"]`);
   if (mySwitch.checked == true) {
-    switchLabel.innerHTML = "Enter what you actually spent";
+    switchLabel.innerHTML = "actual spending";
   } else {
-    switchLabel.innerHTML = "Enter what you would like to spend in percentage";
+    switchLabel.innerHTML = "planned spending by percent";
   }
 };
 

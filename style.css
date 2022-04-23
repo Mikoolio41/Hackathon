@@ -59,6 +59,7 @@ button {
   cursor: pointer;
   transition: all 0.3s ease 0s;
   margin-left: 20px;
+  width: 10em;
 }
 
 button:hover {
@@ -87,7 +88,7 @@ button:hover {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 0.8em;
   padding: 20px 30px;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 .myForm fieldset {
@@ -103,7 +104,6 @@ button:hover {
 
 .myForm p {
   font-size: 0.9em;
-
 }
 
 .myForm label {
@@ -113,14 +113,36 @@ button:hover {
 }
 
 .myForm input[type="text"],
-.myForm input[type="email"],
+/* .myForm input[type="email"], */
 .myForm select {
   width: 100%;
   border: 1px solid #ccc;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 0.9em;
   padding: 0.3em;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+}
+.myForm input[type="text"],
+#currency {
+  width: 24em;
+}
+
+.form-switch {
+  padding-left: 0;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 0.9em;
+  /* margin-left: 2em; */
+}
+
+.form-check-label {
+  margin-left: 1em;
+  margin-top: 0.5em;
+}
+
+#switchExpenseType {
+  width: 4em;
+  height: 2em;
+  margin-left: 1em;
 }
 
 .myForm select {
@@ -128,7 +150,7 @@ button:hover {
 }
 
 .leftGrid {
-    grid-column: 0 / 1;
+  grid-column: 0 / 1;
 }
 
 .myForm button {
@@ -138,7 +160,7 @@ button:hover {
   background: rgb(172, 189, 205);
   border: none;
   font-weight: bold;
-  margin: 20px 35%;
+  margin: 20px;
 }
 
 .myForm button:hover {
@@ -218,4 +240,14 @@ table.greenTable tfoot .links a {
 }
 .container {
   display: flex;
+  margin: 10px;
+  align-content: space-between;
+}
+
+.chart-container {
+  position: relative;
+  height: fit-content;
+  /* height: 40vh; */
+  width: 40vw;
+  /* width: 80vw; */
 }

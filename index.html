@@ -39,12 +39,12 @@
     <div class="formTableContainer">
       <div class="formContainer">
         <form class="myForm" method="get">
-          <fieldset class="leftGrid personalDetails">
+          <!-- <fieldset class=" personalDetails">
             <legend>Personal Details</legend>
-            <p class="leftGrid personalDetails">
+            <p class=" personalDetails">
               Please enter your name and email:
             </p>
-            <p class="leftGrid namePerson">
+            <p class=" namePerson">
               <label
                 >Name
                 <input
@@ -55,42 +55,16 @@
                 />
               </label>
             </p>
-            <!-- <p class="leftGrid emailPerson">
+            <p class=" emailPerson">
             <label
               >Email
               <input type="email" name="email_address" />
             </label>
-          </p> -->
-          </fieldset>
-          <fieldset class="rightGrid incomeTitle">
-            <legend>Income</legend>
-            <p>Please enter your monthly income</p>
-            <p class="rightGrid incomeInput">
-              <label
-                >Income
-                <input type="text" name="customer_income" required />
-              </label>
-            </p>
-          </fieldset>
-          <fieldset class="leftGrid distTitle">
-            <legend>Distribution of Expenses</legend>
-            <p class="leftGrid distTitle">
-              Please enter your estimated monthly budget for each of the
-              following:
-            </p>
-          </fieldset>
-          <div class="form-check form-switch">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              role="switch"
-              id="switchExpenseType"
-            />
-            <label class="form-check-label" for="switchExpenseType"
-              >Enter what you would like to spend in percentage</label
-            >
-          </div>
-          <fieldset class="leftGrid month">
+          </p>
+          </fieldset> -->
+          <fieldset>
+            <legend>Month</legend>
+            <p>Please enter the calendar month</p>
             <p>
               <label
                 >Month
@@ -98,15 +72,17 @@
               </label>
             </p>
           </fieldset>
-          <!-- <fieldset class="leftGrid year">
+          <fieldset>
+            <legend>Income</legend>
+            <p>Please enter your monthly income</p>
             <p>
               <label
-                >Year
-                <input type="text" id="year" name="year" />
+                >Income
+                <input type="text" name="customer_income" required />
               </label>
             </p>
-          </fieldset> -->
-          <fieldset class="leftGrid currencySelect">
+          </fieldset>
+          <fieldset>
             <p>
               <label
                 >Please select currency:
@@ -118,7 +94,43 @@
               </label>
             </p>
           </fieldset>
-          <fieldset class="leftGrid mortgage">
+
+          <fieldset>
+            <legend>We can help you plan</legend>
+            <p>
+              think of how much you would like to allocate each expense category
+            </p>
+          </fieldset>
+          <fieldset>
+            <legend>Distribution of Expenses</legend>
+            <p>
+              Please enter your estimated monthly budget for each of the
+              following:
+            </p>
+          </fieldset>
+          <div class="form-check form-switch">
+            <legend>Choose between planned and actual spending</legend>
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="switchExpenseType"
+            />
+            <label class="form-check-label" for="switchExpenseType"
+              >planned spending by percent</label
+            >
+          </div>
+          <!-- <div></div> -->
+          <!-- <fieldset class=" year">
+            <p>
+              <label
+                >Year
+                <input type="text" id="year" name="year" />
+              </label>
+            </p>
+          </fieldset> -->
+
+          <fieldset>
             <p>
               <label
                 >Mortgage
@@ -126,7 +138,7 @@
               </label>
             </p>
           </fieldset>
-          <fieldset class="leftGrid utilities">
+          <fieldset>
             <p>
               <label
                 >Utilities
@@ -134,7 +146,7 @@
               </label>
             </p>
           </fieldset>
-          <fieldset class="leftGrid health">
+          <fieldset>
             <p>
               <label
                 >Health Care
@@ -142,7 +154,7 @@
               </label>
             </p>
           </fieldset>
-          <fieldset class="rightGrid insurance">
+          <fieldset>
             <p>
               <label
                 >Insurance
@@ -150,7 +162,7 @@
               </label>
             </p>
           </fieldset>
-          <fieldset class="rightGrid groceries">
+          <fieldset>
             <p>
               <label
                 >Groceries
@@ -158,7 +170,7 @@
               </label>
             </p>
           </fieldset>
-          <fieldset class="rightGrid vacation">
+          <fieldset>
             <p>
               <label
                 >Vacation
@@ -166,7 +178,7 @@
               </label>
             </p>
           </fieldset>
-          <fieldset class="rightGrid lifestyle">
+          <fieldset>
             <p>
               <label
                 >Lifestyle (fitness, grooming)
@@ -174,7 +186,7 @@
               </label>
             </p>
           </fieldset>
-          <fieldset class="rightGrid entertainment">
+          <fieldset>
             <p>
               <label
                 >Entertainment
@@ -182,7 +194,7 @@
               </label>
             </p>
           </fieldset>
-          <fieldset class="rightGrid shopping">
+          <fieldset>
             <p>
               <label
                 >Shopping
@@ -190,7 +202,7 @@
               </label>
             </p>
           </fieldset>
-          <fieldset class="rightGrid savings">
+          <fieldset>
             <p>
               <label
                 >Savings
@@ -202,7 +214,7 @@
             <button name="submit">Submit</button>
           </p>
           <p>
-            <button name="clear">clear last column</button>
+            <button name="clear">Clear last column</button>
           </p>
         </form>
       </div>
@@ -253,19 +265,13 @@
       </div>
     </div>
     <section class="container">
-      <div
-        class="chart-container"
-        style="position: relative; height: 40vh; width: 80vw"
-      >
+      <div class="chart-container">
         <div>
           <canvas class="chart" id="chartsum"></canvas>
         </div>
       </div>
 
-      <div
-        class="chart-container"
-        style="position: relative; height: 40vh; width: 80vw"
-      >
+      <div class="chart-container">
         <div>
           <canvas class="chart" id="chartpercent"></canvas>
         </div>
