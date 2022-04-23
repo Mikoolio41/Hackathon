@@ -2,9 +2,12 @@
 
 // const fullName = document.getElementById("fullName").value;
 // const income = document.getElementById("income").value;
-document
-  .querySelector(`button[name="submit"]`)
-  .addEventListener("click", getData);
+
+const submitButton = document.querySelector(`button[name="submit"]`);
+submitButton.addEventListener("click", getData);
+
+const delColumnButton = document.querySelector(`button[name="clear"]`);
+delColumnButton.addEventListener("click", removeData);
 
 // const testChange = () => {
 //   if (mySwitch.checked == true) {
@@ -15,6 +18,8 @@ document
 // };
 
 let mySwitch = document.querySelector(`input[id="switchExpenseType"]`);
+let lastInput = document.querySelector(`input[id="shopping"]`);
+let currency = document.querySelector(`select[id="currency"]`);
 
 const changeInput = () => {
   const switchLabel = document.querySelector(`label[class="form-check-label"]`);
@@ -25,7 +30,63 @@ const changeInput = () => {
   }
 };
 
+const calculateSavings = () => {
+  let month = document.querySelector(`input[name="month"]`).value;
+  let income = Number(
+    document.querySelector(`input[name="customer_income"]`).value
+  );
+  let mortgage = Number(document.querySelector(`input[name="mortgage"]`).value);
+  let utilities = Number(
+    document.querySelector(`input[name="utilities"]`).value
+  );
+  let healthcare = Number(
+    document.querySelector(`input[name="healthcare"]`).value
+  );
+  let insurance = Number(
+    document.querySelector(`input[name="insurance"]`).value
+  );
+  let groceries = Number(
+    document.querySelector(`input[name="groceries"]`).value
+  );
+  let vacation = Number(document.querySelector(`input[name="vacation"]`).value);
+  let lifestyle = Number(
+    document.querySelector(`input[name="lifestyle"]`).value
+  );
+  let entertainment = Number(
+    document.querySelector(`input[name="entertainment"]`).value
+  );
+  let shopping = Number(document.querySelector(`input[name="shopping"]`).value);
+  if (mySwitch.checked == false) {
+    let savings =
+      100 -
+      (mortgage +
+        utilities +
+        healthcare +
+        insurance +
+        groceries +
+        vacation +
+        lifestyle +
+        entertainment +
+        shopping);
+    document.querySelector(`input[name="savings"]`).value = savings;
+  } else if (mySwitch.checked == true) {
+    let savings =
+      income -
+      (mortgage +
+        utilities +
+        healthcare +
+        insurance +
+        groceries +
+        vacation +
+        lifestyle +
+        entertainment +
+        shopping);
+    document.querySelector(`input[name="savings"]`).value = savings;
+  }
+};
+
 mySwitch.addEventListener("change", changeInput);
+lastInput.addEventListener("change", calculateSavings);
 
 let categoryColor = {
   category: [
@@ -38,6 +99,7 @@ let categoryColor = {
     "lifestyle",
     "entertainment",
     "shopping",
+    "savings",
   ],
   color: [
     "blue",
@@ -49,6 +111,7 @@ let categoryColor = {
     "turquoise",
     "azure",
     "magenta",
+    "orange",
   ],
 };
 
@@ -64,6 +127,7 @@ let expenseArray = {
   lifestyle: [],
   entertainment: [],
   shopping: [],
+  savings: [],
 };
 let percentArray = {
   month: [],
@@ -77,6 +141,7 @@ let percentArray = {
   lifestyle: [],
   entertainment: [],
   shopping: [],
+  savings: [],
 };
 
 const ctx = document.getElementById("chartsum");
@@ -130,6 +195,11 @@ const expenseChart = new Chart(ctx, {
         label: categoryColor.category[8],
         data: expenseArray.shopping,
         backgroundColor: categoryColor.color[8],
+      },
+      {
+        label: categoryColor.category[9],
+        data: expenseArray.savings,
+        backgroundColor: categoryColor.color[9],
       },
     ],
   },
@@ -209,6 +279,11 @@ const percentChart = new Chart(ctx1, {
         data: percentArray.shopping,
         backgroundColor: categoryColor.color[8],
       },
+      {
+        label: categoryColor.category[9],
+        data: percentArray.savings,
+        backgroundColor: categoryColor.color[9],
+      },
     ],
   },
   options: {
@@ -235,9 +310,21 @@ const percentChart = new Chart(ctx1, {
   },
 });
 
-// document
-//   .querySelector(`input[name="submit"]`)
-//   .addEventListener("submit", getData);
+const checkCurrency = (chart) => {
+  if (currency.value == "Euro") {
+    chart.options.scales.y.title.text = "\u20ac";
+  } else {
+    chart.options.scales.y.title.text = currency.value;
+  }
+  chart.update();
+};
+
+const updateAxis = () => {
+  checkCurrency(expenseChart);
+  checkCurrency(percentChart);
+};
+
+currency.addEventListener("change", updateAxis);
 
 // Fetch the data from the HTML form
 
@@ -271,6 +358,7 @@ function getData(e) {
     document.querySelector(`input[name="entertainment"]`).value
   );
   let shopping = Number(document.querySelector(`input[name="shopping"]`).value);
+  let savings = Number(document.querySelector(`input[name="savings"]`).value);
 
   // Create variables for the table and charts
 
@@ -286,6 +374,7 @@ function getData(e) {
     lifestyle: lifestyle,
     entertainment: entertainment,
     shopping: shopping,
+    savings: savings,
   };
 
   let newMonthPercent = {
@@ -300,6 +389,7 @@ function getData(e) {
     lifestyle: Number(((lifestyle / income) * 100).toFixed(1)),
     entertainment: Number(((entertainment / income) * 100).toFixed(1)),
     shopping: Number(((shopping / income) * 100).toFixed(1)),
+    savings: Number(((savings / income) * 100).toFixed(1)),
   };
 
   // Validation Checks
@@ -314,8 +404,8 @@ function getData(e) {
       vacation +
       lifestyle +
       entertainment +
-      shopping;
-    console.log(sum);
+      shopping +
+      savings;
     if (sum != 100) {
       return false;
     } else {
@@ -333,8 +423,8 @@ function getData(e) {
       vacation +
       lifestyle +
       entertainment +
-      shopping;
-    console.log(sum);
+      shopping +
+      savings;
     if (sum != newMonth.income) {
       return false;
     } else {
@@ -405,13 +495,13 @@ function getData(e) {
   }
 
   if (mySwitch.checked == false) {
-    if (checkPercent() === true) {
+    if (checkPercent() == true) {
       addPlanning("expensesTable");
     } else {
       alert("The percents you entered do not add to 100");
     }
-  } else {
-    if (checkIncomeSum() === true) {
+  } else if (mySwitch.checked == true) {
+    if (checkIncomeSum() == true) {
       addColumn("expensesTable");
       chartIt();
     } else {
@@ -419,13 +509,34 @@ function getData(e) {
     }
   }
 
-  // console.log(document.querySelector(`input[name="month"]`).value);
-  // console.log(newMonth);
+  document.querySelector("form").reset();
 
   // Test stuff
-  // console.log(expenseChart.data.datasets[0].data);
-  // console.log(expenseChart.data.datasets);
-  // console.log(expenseArray);
-  // console.log(percentArray);
+}
+
+// Remove data
+
+function removeData() {
+  function deleteColumn(tblId) {
+    let allRows = document.getElementById(tblId).rows;
+    for (i = 0; i < allRows.length; i++) {
+      if (allRows[i].cells.length > 1) {
+        allRows[i].deleteCell(-1);
+      }
+    }
+  }
+
+  function removeChartData(chart, arr) {
+    for (x in arr) {
+      arr[x].pop();
+    }
+    chart.update();
+  }
+
+  deleteColumn("expensesTable");
+  removeChartData(expenseChart, expenseArray);
+  removeChartData(percentChart, percentArray);
 }
 console.log(document.querySelector(`select[id="currency"]`).value);
+
+console.log(expenseChart.options.scales.y.title.text);
