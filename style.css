@@ -159,8 +159,11 @@ button:hover {
   border-radius: 0.5em;
   background: rgb(172, 189, 205);
   border: none;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 13px;
   font-weight: bold;
-  margin: 20px;
+  margin-top: 10px;
+  width: 70%;
 }
 
 .myForm button:hover {
@@ -240,14 +243,16 @@ table.greenTable tfoot .links a {
 }
 .container {
   display: flex;
-  margin: 10px;
-  align-content: space-between;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  /* margin: 10px; */
+  /* align-content: space-between; */
 }
 
 .chart-container {
   position: relative;
   height: fit-content;
   /* height: 40vh; */
-  width: 40vw;
+  width: 50%;
   /* width: 80vw; */
 }
