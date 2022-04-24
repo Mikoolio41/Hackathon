@@ -22,9 +22,8 @@ button {
   font-family: "Lora", serif;
   font-weight: 500;
   font-size: 16px;
-  color: white;
+  color: black;
   text-decoration: none;
-  background-color: #007bff;
 }
 
 header {
@@ -167,6 +166,10 @@ button:hover {
   width: 70%;
 }
 
+.actionButtn {
+  background-color: #007bff;
+  color: white;
+}
 .myForm button:hover {
   background: #ccc;
   cursor: pointer;
@@ -205,7 +208,7 @@ table.greenTable tbody td {
   text-align: center;
 }
 /* table.greenTable tr:nth-child(even) { */
-  /* background: #93dfc2; */
+/* background: #93dfc2; */
 /* } */
 table.greenTable thead {
   /* background: #11814f;
