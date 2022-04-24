@@ -22,8 +22,9 @@ button {
   font-family: "Lora", serif;
   font-weight: 500;
   font-size: 16px;
-  color: black;
+  color: white;
   text-decoration: none;
+  background-color: #007bff;
 }
 
 header {
@@ -53,7 +54,7 @@ header {
 
 button {
   padding: 9px 25px;
-  background-color: #308971;
+  /* background-color: #308971; */
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -157,7 +158,7 @@ button:hover {
   display: inline-block;
   padding: 1em;
   border-radius: 0.5em;
-  background: rgb(172, 189, 205);
+  /* background: rgb(172, 189, 205); */
   border: none;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 13px;
@@ -201,6 +202,7 @@ table.greenTable th {
 table.greenTable tbody td {
   font-size: 13px;
   color: #000000;
+  text-align: center;
 }
 table.greenTable tr:nth-child(even) {
   background: #93dfc2;
